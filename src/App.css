@@ -1,6 +1,16 @@
 .App {
   text-align: center;
 }
+.team-icon{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 35px;
+}
+
+#team-records{
+  padding: 40px 40px;
+}
 
 .App-logo {
   height: 40vmin;
