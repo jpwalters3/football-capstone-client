@@ -32,9 +32,14 @@ const landing = () => {
   return (
       <>
       <h1> Premier League Records </h1>
-    <div id = "team-records">
-        {teams.map(team => <TeamDisplay club = {team}/>)}
-    </div>
+        <table id = "team-records">
+            <tbody>
+                <tr>
+                    <th></th><th>team</th><th>record</th><th>points</th>
+                </tr>
+                {teams.map(team => <TeamDisplay club = {team}/>)}
+            </tbody>
+        </table>
     </>
   )
 }
