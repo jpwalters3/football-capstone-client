@@ -1,8 +1,7 @@
 import PlayerDisplay from "./PlayerDisplay";
 import '../styles/Roster.css'
 import React, {useEffect} from 'react'
-import { useState } from "react";
-
+import { useState } from 'react'
 //Example info passed in
 // const players =
 // [
@@ -42,36 +41,27 @@ import { useState } from "react";
 //     }
 // ]
 
-function Roster([{}]){
-    const url = `http://localhost:5101/api/player`;
 
-    const [players, setPlayers] = useState({});
+function Roster(){
 
-    useEffect(() => {
-        loadPlayers();
-    });
+    const [players, setPlayers] = useState([{}]);
 
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-    }
-
-
-    async function loadPlayers() {
-        try {
-            const response = await fetch(url, requestOptions);
-            console.log(response);
-            if (response.status !== 200) {
-                console.log(`response is not 200 OK: ${response.status} : ${response.statusText}`);
+    useEffect(() =>{
+        fetch("http://localhost:5101/api/player")
+        .then(response => {
+            if(response.status !== 200){
+                alert("Error: status " + response.status);
+                return Promise.reject("error");
             }
-            const getPlayers = await response.json();
-            setPlayers(getPlayers);
-        } catch (error) {
-            console.log(error);
-        }
-    }
+            return response.json();
+        })
+        .then(json =>{
+            setPlayers(json);
+        })
+    })
     return(
         <>
+        
             <table className = "roster-display">
                 <tbody>
                     <tr>
