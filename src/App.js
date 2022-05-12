@@ -26,6 +26,7 @@ function App() {
           <Route path = "/EditGame" element = {<EditGame />}/>
           <Route path = "/AddGame" element = {<AddGame />}/>
           <Route path = "/DeleteGame" element = {<DeleteGame />}/>
+          <Route path = "/MasterView" elemenet = {<></>}/>
         </Routes>
       </Router>
     </div>
