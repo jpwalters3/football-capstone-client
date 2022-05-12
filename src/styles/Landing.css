@@ -1,0 +1,24 @@
+.team-icon{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 35px;
+}
+
+#team-records{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, th, td{
+  border: 3px soild black;
+  border-collapse: collapse;
+}
+
+.team-display{
+  background-color: lightblue;
+}
+
+.team-display:hover{
+  background-color: rgb(138, 174, 186);
+}
