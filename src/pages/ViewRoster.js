@@ -6,7 +6,10 @@ const ViewRoster = () => {
   return (
     <div>
         <Header />
-        <h2>Team {urlparams.get('id')} Roster Display</h2>
+        <h3>Team {urlparams.get('id')} Roster Display</h3>
+        <p>TODO: get request by id calling stored proceedure for player statistics by team</p>
+        <p>TODO: display for players</p>
+        <p>TODO: Add Edit and Delete page links for players</p>
         
     </div>
   )
