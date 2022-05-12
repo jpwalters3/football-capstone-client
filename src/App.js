@@ -1,6 +1,6 @@
 import Landing from './pages/Landing'
 import ViewRoster from './pages/ViewRoster'
-import Login from './pages/Login'
+import Login from './pages/login'
 import ViewSchedule from './pages/ViewSchedule'
 import Statistics  from './pages/Statistics'
 import AddGame from './pages/AddGame'
@@ -12,7 +12,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
 
 function App() {
   return (
