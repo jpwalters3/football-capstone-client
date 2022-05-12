@@ -6,6 +6,7 @@ import Statistics  from './pages/Statistics'
 import AddGame from './pages/AddGame'
 import DeleteGame from './pages/DeleteGame'
 import EditGame from './pages/EditGame'
+import MasterView from './pages/MasterView'
 import './styles/App.css'
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ function App() {
           <Route path = "/EditGame" element = {<EditGame />}/>
           <Route path = "/AddGame" element = {<AddGame />}/>
           <Route path = "/DeleteGame" element = {<DeleteGame />}/>
-          <Route path = "/MasterView" elemenet = {<></>}/>
+          <Route path = "/Admin" element = {<MasterView/>}/>
         </Routes>
       </Router>
     </div>
