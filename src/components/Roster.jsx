@@ -1,47 +1,75 @@
 import PlayerDisplay from "./PlayerDisplay";
 import '../styles/Roster.css'
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useState } from "react";
 
 //Example info passed in
-const players =
-[
-    {
-        playerId:1,
-        playerName:'John Smith',
-        dateOfBirth:'1990-01-01',
-        clubName:'Manchester Untd',
-        position: 'goalie',
-        isActive:true,
-        shots:12,
-        shotsOnTarget:2,
-        goals:2,
-        assists:3,
-        saves:1,
-        fouls:0,
-        dribbleSuccessRate:50,
-        passCompletionRate:80,
-        tackleSuccessRate:25,
-    },
-    {
-        playerId:1,
-        playerName:'John Smith',
-        dateOfBirth:'1990-01-01',
-        clubName:'Manchester Untd',
-        position: 'goalie',
-        isActive:true,
-        shots:12,
-        shotsOnTarget:2,
-        goals:2,
-        assists:3,
-        saves:1,
-        fouls:0,
-        dribbleSuccessRate:50,
-        passCompletionRate:80,
-        tackleSuccessRate:25,
-    }
-]
+// const players =
+// [
+//     {
+//         playerId:1,
+//         playerName:'John Smith',
+//         dateOfBirth:'1990-01-01',
+//         clubName:'Manchester Untd',
+//         position: 'goalie',
+//         isActive:true,
+//         shots:12,
+//         shotsOnTarget:2,
+//         goals:2,
+//         assists:3,
+//         saves:1,
+//         fouls:0,
+//         dribbleSuccessRate:50,
+//         passCompletionRate:80,
+//         tackleSuccessRate:25,
+//     },
+//     {
+//         playerId:1,
+//         playerName:'John Smith',
+//         dateOfBirth:'1990-01-01',
+//         clubName:'Manchester Untd',
+//         position: 'goalie',
+//         isActive:true,
+//         shots:12,
+//         shotsOnTarget:2,
+//         goals:2,
+//         assists:3,
+//         saves:1,
+//         fouls:0,
+//         dribbleSuccessRate:50,
+//         passCompletionRate:80,
+//         tackleSuccessRate:25,
+//     }
+// ]
 
-const Roster = () =>{
+function Roster([{}]){
+    const url = `http://localhost:5101/api/player`;
+
+    const [players, setPlayers] = useState({});
+
+    useEffect(() => {
+        loadPlayers();
+    });
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    }
+
+
+    async function loadPlayers() {
+        try {
+            const response = await fetch(url, requestOptions);
+            console.log(response);
+            if (response.status !== 200) {
+                console.log(`response is not 200 OK: ${response.status} : ${response.statusText}`);
+            }
+            const getPlayers = await response.json();
+            setPlayers(getPlayers);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return(
         <>
             <table className = "roster-display">
