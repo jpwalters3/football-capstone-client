@@ -1,5 +1,7 @@
 import React from 'react'
 import TeamDisplay from '../components/TeamDisplay'
+import '../styles/Landing.css'
+import Header from '../components/Header'
 
 const teams =
     [
@@ -31,7 +33,7 @@ const teams =
 const landing = () => {
   return (
       <>
-      <h1> Premier League Records </h1>
+        <Header />
         <table id = "team-records">
             <tbody>
                 <tr>
