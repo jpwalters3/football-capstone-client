@@ -1,4 +1,5 @@
 import PlayerDisplay from "../components/PlayerDisplay";
+import '../styles/Roster.css'
 import React from 'react'
 
 //Example info passed in
@@ -43,7 +44,7 @@ const players =
 const Roster = () =>{
     return(
         <>
-            <table>
+            <table className = "roster-display">
                 <tbody>
                     <tr>
                         <th>Id</th><th colSpan="2">player</th><th>DOB</th><th colSpan="2">club</th><th>position</th><th>status</th>
