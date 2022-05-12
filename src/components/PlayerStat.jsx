@@ -3,6 +3,7 @@ import React from 'react'
 const PlayerStat = ({playerStat}) => {
     return(
         <tr>
+            <td>hi</td>
             <td>{playerStat.shots}</td>
             <td>{playerStat.shotsOnTarget}</td>
             <td>{playerStat.goals}</td>
