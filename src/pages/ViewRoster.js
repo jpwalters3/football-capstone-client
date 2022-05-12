@@ -10,6 +10,7 @@ const ViewRoster = () => {
         <p>TODO: get request by id calling stored proceedure for player statistics by team</p>
         <p>TODO: display for players</p>
         <p>TODO: Add Edit and Delete page links for players</p>
+        <p>TODO: Add View player history navigation</p>
         
     </div>
   )
