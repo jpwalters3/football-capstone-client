@@ -1,14 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TeamDisplay = ({club}) => {
   return (
-    <tr class = "team-display">
+    <tr className = "team-display">
       <td> 
-        <img src = {require('../img/club-' + club.teamId + '-logo.png')} class = "team-icon"/>
+        <img src = {require('../img/club-' + club.teamId + '-logo.png')} className = "team-icon"/>
       </td>
       <td>{club.teamName}   </td>
       <td>  {club.wins}-{club.losses}-{club.draws}  </td>
       <td>  {club.points} points</td>
+      <td> 
+        <Link to={"/Roster?id=" + club.teamId}> <button> Roster </button> </Link>
+        <Link to={"/Schedule?id=" + club.teamId}> <button> Schedule </button> </Link>
+      </td>
     </tr>
   )
 }
