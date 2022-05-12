@@ -1,4 +1,4 @@
-import PlayerDisplay from "../components/PlayerDisplay";
+import PlayerDisplay from "./PlayerDisplay";
 import '../styles/Roster.css'
 import React from 'react'
 

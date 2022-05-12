@@ -1,9 +1,13 @@
 import React from 'react'
+import '../styles/MasterView.css'
+import DisplayBar from '../components/DisplayBar'
+import Header from '../components/Header'
 
 const MasterView = () => {
   return (
     <div>
-      <button></button>
+      <Header />
+      <DisplayBar />
     </div>
   )
 }
