@@ -16,8 +16,7 @@ const PlayerDisplay = ({player}) => {
                 <td><button type="button" onClick = {()=>{setStatMode(!statMode)}}>Stats</button></td>
             </tr>
 
-            {statMode && <PlayerStat playerStat={player}/>}
-    
+            {statMode && <PlayerStat playerId={player.playerId}/>}
         </>
     ) 
 }

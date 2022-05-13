@@ -1,18 +1,29 @@
 import React from 'react'
-
-const PlayerStat = ({playerStat}) => {
+import { useState } from 'react'
+import { useEffect } from 'react'
+const PlayerStat = ({playerId}) => {
+    const [playerData, setPlayerData] = useState({})
+    useEffect(() =>{
+        fetch("http://localhost:5101/api/reports/" + playerId)
+        .then(response => {
+            if(response.status !== 200){
+                alert("Error: status " + response.status);
+                return Promise.reject("error");
+            }
+            return response.json();
+        })
+        .then(json =>{
+            setPlayerData(json);
+        })
+    })
     return(
         <tr>
-            <td>hi</td>
-            <td>{playerStat.shots}</td>
-            <td>{playerStat.shotsOnTarget}</td>
-            <td>{playerStat.goals}</td>
-            <td>{playerStat.assists}</td>
-            <td>{playerStat.saves}</td>
-            <td>{playerStat.fouls}</td>
-            <td>{playerStat.dribbleSuccessRate}</td>
-            <td>{playerStat.passCompletionRate}</td>
-            <td>{playerStat.tackleSuccessRate}</td>
+            <td>Shots: {playerData.shots}</td>
+            <td>On Target: {playerData.shotsOnTarget}</td>
+            <td>Goals: {playerData.goals}</td>
+            <td>Assits: {playerData.assists}</td>
+            <td>Saves: {playerData.saves}</td>
+            <td>Fouls: {playerData.fouls}</td>
         </tr>
     )
 }
