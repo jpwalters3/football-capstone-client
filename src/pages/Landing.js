@@ -15,7 +15,7 @@ const teams =
     },
     {
     teamId: 2,
-    teamName: "Manchester Untd",
+    teamName: "Manchester Utd",
     wins: 8,
     losses: 6,
     draws: 1,
@@ -32,8 +32,8 @@ const teams =
 
 const landing = () => {
   return (
-      <>
-        <Header />
+    <>
+    <Header />
         <table id = "team-records">
             <tbody>
                 <tr>

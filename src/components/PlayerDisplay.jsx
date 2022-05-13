@@ -10,7 +10,7 @@ const PlayerDisplay = ({player}) => {
             <tr>
                 <td>{player.playerId}</td>
                 <td colSpan="2">{player.firstName + " " + player.lastName}</td>
-                <td>{player.dateOfBirth.substring(0,10)}</td>
+                <td>{player.dateOfBirth}</td>
                 <td colSpan="2">{player.clubId}</td>
                 <td>{player.positionId}</td>
                 <td><button type="button" onClick = {()=>{setStatMode(!statMode)}}>Stats</button></td>
@@ -19,7 +19,7 @@ const PlayerDisplay = ({player}) => {
             {statMode && <PlayerStat playerStat={player}/>}
     
         </>
-    )
+    ) 
 }
 
 export default PlayerDisplay
