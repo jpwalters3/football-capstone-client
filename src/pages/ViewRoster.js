@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import Roster from '../components/Roster'
+import Roster from '../components/ViewAllPlayers'
 
 const ViewRoster = () => {
     let urlparams = new URLSearchParams(window.location.search)

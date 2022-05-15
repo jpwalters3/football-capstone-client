@@ -36,7 +36,7 @@ const HistoryList = ({playerId}) => {
         .then(json =>{
             setHistoryList(json);
         })
-    })
+    }, [])
     return(
         <tr>
             <td colSpan="9">
