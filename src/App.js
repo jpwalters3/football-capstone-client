@@ -8,6 +8,7 @@ import DeleteGame from './pages/DeleteGame'
 import EditGame from './pages/EditGame'
 import MasterView from './pages/MasterView'
 import EditPlayer from './pages/EditPlayer'
+import AddPlayer from './pages/AddPlayer'
 import './styles/App.css'
 import {
   BrowserRouter as Router,
@@ -30,6 +31,7 @@ function App() {
           <Route path = "/DeleteGame" element = {<DeleteGame />}/>
           <Route path = "/Admin" element = {<MasterView/>}/>
           <Route path = "/EditPlayer" element = {<EditPlayer />}/>
+          <Route path = "/AddPlayer" element = {<AddPlayer />}/>
         </Routes>
       </Router>
     </div>

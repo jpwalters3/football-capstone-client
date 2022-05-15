@@ -1,5 +1,5 @@
 import React from 'react'
-import PlayerStat from "../components/PlayerStat";
+import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
 import { useState } from 'react'
 import { Link } from 'react-router-dom'

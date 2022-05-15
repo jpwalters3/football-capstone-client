@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import DisplayElement from './DisplayElement'
-import Roster from './Roster'
+import ViewAllPlayers from './ViewAllPlayers'
 import ShowAllTeams from './ShowAllTeams'
 import ShowAllGames from './ShowAllGames'
 
@@ -14,7 +14,7 @@ const Navbar = () => {
             <DisplayElement Name = "Teams" onShow = {()=>setDisplay("teams")} />
             <DisplayElement Name = "Games" onShow = {()=>setDisplay("games")} />
         </div>
-        {(display === "players") && <Roster />}
+        {(display === "players") && <ViewAllPlayers />}
         {(display === "teams") && <ShowAllTeams />}
         {(display === "games") && <ShowAllGames />}
     </div>

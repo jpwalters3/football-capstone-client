@@ -1,19 +1,21 @@
 import PlayerDisplay from "./PlayerDisplay";
 import '../styles/Roster.css'
-import React, {useEffect} from 'react'
 import { useState } from 'react'
+import { useEffect } from 'react'
 import { GetAllPlayers } from '../api/GetAllPlayers'
+import { Link } from 'react-router-dom'
 
-function Roster(){
+function ViewAllPlayers(){
 
     const [players, setPlayers] = useState([{}]);
 
-    useEffect(() =>{
-        GetAllPlayers(setPlayers)
-    })
+    useEffect(()=> {
+        GetAllPlayers(setPlayers);
+    }, [])
+
     return(
         <>
-        
+            <Link to = {"/AddPlayer"}> <button>Add New Player</button></Link>
             <table className = "roster-display">
                 <tbody>
                     <tr>
@@ -27,4 +29,4 @@ function Roster(){
     )
 }
 
-export default Roster;
+export default ViewAllPlayers;

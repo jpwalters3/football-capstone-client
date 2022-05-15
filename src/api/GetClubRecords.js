@@ -8,6 +8,7 @@ export async function GetClubRecords(set){
             return response.json();
         })
         .then(json =>{
+            console.log(json);
             set(json);
         })
 }

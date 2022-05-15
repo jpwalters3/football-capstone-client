@@ -7,7 +7,7 @@ const PlayerStat = ({playerId}) => {
 
     useEffect(() =>{
         GetPlayerStats(playerId, setPlayerData)
-    })
+    }, [])
 
     return(
         <tr>

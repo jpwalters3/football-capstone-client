@@ -10,7 +10,7 @@ const Landing = () => {
     const [clubs, setClubs] = useState([{}]);
     useEffect(() =>{
         GetClubRecords(setClubs)
-    })
+    }, [])
   return (
     <>
     <Header />
