@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { GetPlayerData } from '../api/GetPlayerData'
 
 const EditPlayerForm = ({player}) => {
-  
+
     useEffect(()=>{
       setFirstName(player.firstName);
       setLastName(player.lastName);
@@ -35,8 +35,7 @@ const EditPlayerForm = ({player}) => {
           <label>Date of Birth: </label>
           <input type = "date" value = {dob.substring(0,10)} onChange = {(e)=> setDob(e.target.value)}/> <br/>
           <label>Active: </label>
-          <input type = "checkbox" value = {isActive} onChange = {(e)=> setIsActive(e.target.value)}/> <br/>
-          <label>Club: </label>
+          <input type = "checkbox" value = {isActive} onChange = {(e)=> setIsActive(e.target.value)} checked/> <br/>
           <ClubSelector /> <br/>
           <input type = "submit" value = "Update" />
         </form>

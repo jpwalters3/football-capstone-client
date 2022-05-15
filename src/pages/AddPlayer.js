@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
+import ClubSelector from '../components/ClubSelector'
 
 const AddPlayer = () => {
   return (
@@ -22,11 +23,7 @@ const AddPlayer = () => {
             <option value = "3">Defender</option>
             <option value = "4">Goalie</option>
           </select> <br/>
-          <label>Team: </label>
-          <select id ="team">
-            <option value = "1">Chelsea</option>
-            <option value = "2">Manchester</option>
-          </select> <br/>
+          <ClubSelector />
           <label>Active: </label>
         <input type = "checkbox"/> <br/>
         <input type = "submit" value = "Add"/>
