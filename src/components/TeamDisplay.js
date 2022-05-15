@@ -2,12 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const TeamDisplay = ({club}) => {
+  var imgId;
+  if (club.clubId > 3) imgId = 0;
+  else imgId = club.clubId;
+
   return (
     <tr className = "team-display">
       <td> 
-        <img src = {require('../img/club-' + club.teamId + '-logo.png')} className = "team-icon" alt =""/>
+        <img src = {require('../img/club-' + imgId + '-logo.png')} className = "team-icon" alt =""/>
       </td>
-      <td>{club.teamName}   </td>
+      <td>{club.name}</td>
       <td>  {club.wins}-{club.losses}-{club.draws}  </td>
       <td>  {club.points} points</td>
       <td> 

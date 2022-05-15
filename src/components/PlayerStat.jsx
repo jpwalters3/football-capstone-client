@@ -1,18 +1,22 @@
 import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { GetPlayerStats } from '../api/GetPlayerStats'
+const PlayerStat = ({playerId}) => {
+    const [playerData, setPlayerData] = useState({})
 
-const PlayerStat = ({playerStat}) => {
+    useEffect(() =>{
+        GetPlayerStats(playerId, setPlayerData)
+    }, [])
+
     return(
         <tr>
-            <td>hi</td>
-            <td>{playerStat.shots}</td>
-            <td>{playerStat.shotsOnTarget}</td>
-            <td>{playerStat.goals}</td>
-            <td>{playerStat.assists}</td>
-            <td>{playerStat.saves}</td>
-            <td>{playerStat.fouls}</td>
-            <td>{playerStat.dribbleSuccessRate}</td>
-            <td>{playerStat.passCompletionRate}</td>
-            <td>{playerStat.tackleSuccessRate}</td>
+            <td>Shots: {playerData.shots}</td>
+            <td>On Target: {playerData.shotsOnTarget}</td>
+            <td>Goals: {playerData.goals}</td>
+            <td>Assits: {playerData.assists}</td>
+            <td>Saves: {playerData.saves}</td>
+            <td>Fouls: {playerData.fouls}</td>
         </tr>
     )
 }
