@@ -7,7 +7,7 @@ const AddTeam = () => {
         <Header/>
         <p>TODO: POST fetch request</p>
         <p>TODO: other input fields</p>
-        <p>STRETCH: add image</p>
+        <p>STRETCH: add team logo</p>
       <form>
           <label>Name: </label>
           <input type = "text" /> <br/>
