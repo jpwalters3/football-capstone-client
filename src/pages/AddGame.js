@@ -7,6 +7,7 @@ const AddGame = () => {
       <Header />
       <h3>Add A Game</h3>
       <p>TODO: POST fetch request</p>
+      <p>TODO: GET fetch request for teams</p>
       <p>TODO: Return on submit?</p>
 
       <form>
