@@ -15,8 +15,8 @@ const TeamDisplay = ({club}) => {
       <td>  {club.wins}-{club.losses}-{club.draws}  </td>
       <td>  {club.points} points</td>
       <td> 
-        <Link to={"/Roster?id=" + club.teamId}> <button>Roster</button> </Link>
-        <Link to={"/Schedule?id=" + club.teamId}> <button>Schedule</button> </Link>
+        <Link to={"/Roster?id=" + club.clubId}> <button>Roster</button> </Link>
+        <Link to={"/Schedule?id=" + club.clubId}> <button>Schedule</button> </Link>
       </td>
     </tr>
   )
