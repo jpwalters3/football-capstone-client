@@ -1,4 +1,4 @@
-import PlayerDisplay from "./PlayerDisplay";
+import AdminPlayerDisplay from "./AdminPlayerDisplay";
 import '../styles/Roster.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -21,7 +21,7 @@ function ViewAllPlayers(){
                     <tr>
                         <th>Id</th><th colSpan="2">player</th><th>DOB</th><th colSpan="2">club</th><th>position</th><th>status</th>
                     </tr>
-                    {players.map(p => <PlayerDisplay player = {p}/>)}
+                    {players.map(p => <AdminPlayerDisplay player = {p}/>)}
                 </tbody>
             </table>
 

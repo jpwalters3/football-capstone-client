@@ -11,6 +11,9 @@ const EditPlayer = () => {
   return (
     <div>
         <Header />
+        <p>TODO: PUT fetch request</p>
+        <p>TODO: autopopulate with GET fetch request</p>
+        <p>TODO: form display </p>
       <h3>Edit player {player.playerId}</h3>
     </div>
   )
