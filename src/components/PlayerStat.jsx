@@ -1,21 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { GetPlayerStats } from '../api/GetPlayerStats'
 const PlayerStat = ({playerId}) => {
     const [playerData, setPlayerData] = useState({})
+
     useEffect(() =>{
-        fetch("http://localhost:5101/api/reports/" + playerId)
-        .then(response => {
-            if(response.status !== 200){
-                alert("Error: status " + response.status);
-                return Promise.reject("error");
-            }
-            return response.json();
-        })
-        .then(json =>{
-            setPlayerData(json);
-        })
+        GetPlayerStats(playerId, setPlayerData)
     })
+
     return(
         <tr>
             <td>Shots: {playerData.shots}</td>
