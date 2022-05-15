@@ -6,6 +6,8 @@ const AddPlayer = () => {
     <div>
       <Header/>
       <h3>Add a New Player</h3>
+      <p>TODO: POST fetch request</p>
+      <p>TODO: GET fetch request teams</p>
       <form>
           <label>First Name: </label>
           <input type = "text" /> <br/>

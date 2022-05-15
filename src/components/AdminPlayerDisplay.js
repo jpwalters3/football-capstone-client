@@ -1,12 +1,10 @@
 import React from 'react'
 import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const PlayerDisplay = ({player}) => {
-    const [statMode, setStatMode] = useState(false);
-    const [historyMode, setHistoryMode] = useState(false);
+const AdminPlayerDisplay = ({player}) => {
+
     return(
         <>
             <tr>
@@ -17,15 +15,12 @@ const PlayerDisplay = ({player}) => {
                 <td>{player.positionId}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
-                    <button type="button" onClick = {()=>{setStatMode(!statMode)}}>Stats</button>
-                    <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}>History</button>
+                    <button>Delete</button>
+                    <Link to = {"/EditPlayer?id=" + player.playerId}><button>Edit</button></Link>
                 </td>
             </tr>
-
-            {statMode && <PlayerStat playerId={player.playerId}/>}
-            {historyMode && <HistoryList playerId={player.playerId}/>}
         </>
     ) 
 }
 
-export default PlayerDisplay
+export default AdminPlayerDisplay
