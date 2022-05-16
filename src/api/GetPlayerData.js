@@ -3,7 +3,7 @@ export async function GetPlayerData(id, set){
     await fetch(url)
     .then(response => {
         if(response.status != 200){
-            alert("error: " + response.statusText);
+            alert("error " + response.status + ": " + response.body);
             return Promise.reject(response.status);
         }
         return response.json();

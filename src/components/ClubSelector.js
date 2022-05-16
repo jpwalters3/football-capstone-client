@@ -15,8 +15,8 @@ const ClubSelector = () => {
 
   return (
     <div>
-        <lable>Club: </lable>
-      <select>
+        <label>Club: </label>
+      <select id = "club">
           {clubs.map((c) => {
               return <option key = {c.clubId} value = {c.clubId}>{c.name}</option>
           })}
