@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { GetAllClubs } from '../api/GetAllClubs'
 
-const ClubSelector = () => {
+const ClubSelector = ({docId, label}) => {
     const [clubs, setClubs] = useState ([{
         clubId:1,
         clubName:"searching database..."
@@ -15,8 +15,8 @@ const ClubSelector = () => {
 
   return (
     <div>
-        <label>Club: </label>
-      <select id = "club">
+        <label>{label}: </label>
+      <select id = {docId}>
           {clubs.map((c) => {
               return <option key = {c.clubId} value = {c.clubId}>{c.name}</option>
           })}

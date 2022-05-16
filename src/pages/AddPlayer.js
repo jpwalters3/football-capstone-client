@@ -5,7 +5,6 @@ import { PostPlayer } from '../api/PostPlayer'
 
 const AddPlayer = () => {
   function FormSubmit(){
-      alert('hello');
       const player = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,
@@ -36,7 +35,7 @@ const AddPlayer = () => {
             <option value = "3">Defender</option>
             <option value = "4">Goalie</option>
           </select> <br/>
-          <ClubSelector />
+          <ClubSelector docId = 'club' label = 'Team'/>
           <label>Active: </label>
         <input type = "checkbox" id = "active"/> <br/>
         <input type = "submit" value = "Add"/>

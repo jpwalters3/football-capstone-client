@@ -7,19 +7,17 @@ export async function PostPlayer(player){
         },
         body: JSON.stringify(player)
     }
-    alert(player.firstName);
     
     fetch("http://localhost:5101/api/player", init)
         .then(response => {
-            alert("hello from fetch");
-            if(response.status != 201){
+            if(response.status !== 201){
                 alert ("Error " + response.status);
                 return Promise.reject(response.status);
             }
+            alert(response.json());
             return response.json();
         })
         .then(json=>{
-            alert("hello from second then");
             alert ("Successfully added new player " + json.playerId);
         })
 
