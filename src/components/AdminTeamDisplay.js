@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AdminTeamDisplay = ({club}) => {
   return (
@@ -8,7 +9,7 @@ const AdminTeamDisplay = ({club}) => {
       <td>{club.foundingDate}</td>
       <td>{club.city}</td>
       <td>
-          <button>Edit</button>
+          <Link to ={"/EditClub?id=" + club.clubId}><button>Edit</button></Link>
       </td>
     </tr>
   )

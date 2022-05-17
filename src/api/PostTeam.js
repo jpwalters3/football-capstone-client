@@ -10,7 +10,6 @@ export async function PostTeam(club){
     alert(JSON.stringify(club));
     fetch("http://localhost:5101/api/club", init)
         .then(response => {
-            alert(JSON.stringify(club));
             if(response.status !== 201){
                 alert ("Error " + response.status);
                 return Promise.reject(response.body);
@@ -18,7 +17,7 @@ export async function PostTeam(club){
             return response.json();
         })
         .then(json=>{
-            alert ("Successfully added new club " + json.clubId);
+            alert ("Successfully added club ID:" + json.clubId);
         })
         .catch(m => alert(m));
 

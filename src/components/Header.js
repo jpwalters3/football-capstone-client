@@ -10,7 +10,7 @@ const Header = () => {
           <Link to="/Home"><Button label={"Home"}/></Link>
           <Link to="/Statistics"><Button label={"Statistics"} secondary/></Link>
           <Link to = "/"><Button label={"Log Out"}/></Link>
-          <Link to ="/Admin"><Button label={"Admin View"} secondary/></Link>
+          <Link to ="/Admin"><Button label={"Admin"} secondary/></Link>
       </nav>
     </div>
   )

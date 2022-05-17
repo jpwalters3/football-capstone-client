@@ -25,17 +25,12 @@ const EditPlayerForm = ({player}) => {
 
     function submitHandler(e){
       e.preventDefault();
-
-      
       player.firstName = document.getElementById('first-name').value;
       player.lastName = document.getElementById('last-name').value;
       player.dateOfBirth = document.getElementById('bday').value;
       player.clubId = document.getElementById('club').value;
       player.isActive = document.getElementById('isactive').checked;
       player.positionId = document.getElementById('position').value;
-
-      
-
       EditPlayer(player);
     }
 
