@@ -4,7 +4,10 @@ import ClubSelector from '../components/ClubSelector'
 import { PostPlayer } from '../api/PostPlayer'
 
 const AddPlayer = () => {
-  function FormSubmit(){
+  function FormSubmit(e){
+
+    e.preventDefault();
+    
       const player = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,
