@@ -10,7 +10,6 @@ const ViewRoster = () => {
         <h3>Team {urlparams.get('id')} Roster Display</h3>
         <ClubRoster id = {urlparams.get('id')} />
         <p>TODO: Roster Should only show active players</p>
-        <p>TODO: History shouldn't return 400 with no entries</p>
     </div>
   )
 }

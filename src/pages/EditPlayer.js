@@ -7,6 +7,7 @@ const EditPlayer = () => {
 
   const [player, setPlayer] = 
   useState({
+    playerId: 1,
     firstName: '',
     lastName: '',
     dateOfBirth: '1970-01-01',

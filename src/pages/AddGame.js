@@ -4,7 +4,9 @@ import { PostGame } from '../api/PostGame'
 import ClubSelector from '../components/ClubSelector'
 
 const AddGame = () => {
-  function FormSubmit(){
+  function FormSubmit(e){
+  
+    e.preventDefault();
 
     const game = {
       matchDate: document.getElementById('date'),
