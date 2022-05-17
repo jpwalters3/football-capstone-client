@@ -9,13 +9,13 @@ const ClubRoster = ({id}) => {
 
     useEffect(()=>{
         GetPlayersByTeam(id, setPlayers)
-    }, [])
+    }, [id]);
   return (
     <div>
       <table className = "club-roster">
           <tbody>
           <tr>
-          <th>Id</th><th colSpan="2">player</th><th>DOB</th><th colSpan="2">club</th><th>position</th><th>status</th>
+          <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th>
           </tr>
           {players.map(p => <PlayerDisplay player = {p}/>)}
           </tbody>

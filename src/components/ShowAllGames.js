@@ -1,14 +1,22 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { GetAllGames } from '../api/GetAllGames';
+import AdminMatchDisplay from './AdminMatchDisplay';
 
 const ShowAllGames = () => {
+    const [matches, setMatches] = useState([{}]);
+    useEffect(()=>{
+        GetAllGames(setMatches);
+    }, [])
   return (
     <div>
-      <Link to = "/AddGame"><button>Add Game</button></Link>
-      <h3>Show All Games</h3>
-      <p>TODO: add GET request for all games</p>
-      <p>TODO: display game data</p>
-      <p>TODO: navigation for ADD, DELETE, UPDATE</p>
+      <Link to = '/AddGame'><button>Add New Match</button></Link>
+      <table>
+          <tbody>
+              {matches.map( (m) => <AdminMatchDisplay match = {m}/>)}
+          </tbody>
+      </table>
     </div>
   )
 }

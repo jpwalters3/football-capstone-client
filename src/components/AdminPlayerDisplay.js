@@ -2,9 +2,15 @@ import React from 'react'
 import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
 import { Link } from 'react-router-dom'
+import { DeletePlayer } from '../api/DeletePlayer';
 
 const AdminPlayerDisplay = ({player}) => {
 
+    function clickHandler(){
+        DeletePlayer(player.playerId);
+        window.location.reload();
+    }
+    
     return(
         <>
             <tr>
@@ -15,7 +21,7 @@ const AdminPlayerDisplay = ({player}) => {
                 <td>{player.positionId}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
-                    <button>Delete</button>
+                    <button onClick = {clickHandler}>Delete</button>
                     <Link to = {"/EditPlayer?id=" + player.playerId}><button>Edit</button></Link>
                 </td>
             </tr>

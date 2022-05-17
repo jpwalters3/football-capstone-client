@@ -1,20 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
+import EditPlayerForm from '../components/EditPlayerForm'
 import { GetPlayerData } from '../api/GetPlayerData'
 
 const EditPlayer = () => {
+
+  const [player, setPlayer] = 
+  useState({
+    playerId: 1,
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '1970-01-01',
+    isActive: true,
+    isOnLoan: false,
+    clubId: 1,
+    positionId: 1
+  });
+
+  useEffect(()=>{
+    GetPlayerData(urlparams.get('id'), setPlayer)
+  }, [])
+
     let urlparams = new URLSearchParams(window.location.search)
-    const [player, setPlayer] = useState({});
-
-    useEffect (()=>{GetPlayerData(urlparams.get('id'), setPlayer)})
-
   return (
     <div>
         <Header />
         <p>TODO: PUT fetch request</p>
-        <p>TODO: autopopulate with GET fetch request</p>
-        <p>TODO: form display </p>
-      <h3>Edit player {player.playerId}</h3>
+
+      <EditPlayerForm player = {player}/>
     </div>
   )
 }

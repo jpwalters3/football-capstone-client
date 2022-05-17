@@ -1,5 +1,5 @@
-export async function GetPlayerData(id, set){
-    const url = "http://localhost:5101/api/player/" + id;
+export async function GetClubData(id, set){
+    const url = "http://localhost:5101/api/club/" + id;
     await fetch(url)
     .then(response => {
         if(response.status != 200){
