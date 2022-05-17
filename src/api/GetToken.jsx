@@ -2,7 +2,8 @@
 import React from "react";
 import {useState, useEffect} from "react";
 
-export async function GetToken(loginCredentials, set){
+
+export async function GetToken(loginCredentials, setToken, setIsAdmin){
     const init = {
         method: "POST",
         headers: {
@@ -15,13 +16,19 @@ export async function GetToken(loginCredentials, set){
     fetch("http://localhost:5101/api/auth/login", init)
         .then(response => {
             if(response.status !== 200){
-                alert(`Error ${response.status}: ${response.statusText}`);
-                //set("errorToken");
+                alert(`Error ${response.status}: ${response.statusText}\nViewing in Guest Mode`);
+                setToken("errorToken");
+                setIsAdmin(false);
                 return Promise.reject("error");
             }
             return response.json();
         })
         .then(json =>{
-            set(json);
+            //console.log(json);    //Testing purposes
+            setToken(json);
+            setIsAdmin(true);
+        })
+        .catch((error)=> {
+            console.log(error);
         })
 }
