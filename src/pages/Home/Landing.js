@@ -1,10 +1,10 @@
 import React from 'react'
-import TeamDisplay from '../components/TeamDisplay'
-import '../styles/Landing.css'
-import Header from '../components/Header'
+import TeamDisplay from '../../components/GuestDisplays/TeamDisplay'
+import '../../styles/Landing.css'
+import Header from '../../components/Header'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { GetClubRecords } from '../api/GetClubRecords'
+import { GetClubRecords } from '../../api/GetClubRecords'
 
 const Landing = () => {
     const [clubs, setClubs] = useState([{}]);

@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/Header'
-import { PostGame } from '../api/PostGame'
-import ClubSelector from '../components/ClubSelector'
+import Header from '../../components/Header'
+import { PostGame } from '../../api/PostGame'
+import ClubSelector from '../../components/ClubSelector'
 
 const AddGame = () => {
   function FormSubmit(e){

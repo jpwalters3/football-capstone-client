@@ -1,16 +1,15 @@
-import Landing from './pages/Landing'
-import ViewRoster from './pages/ViewRoster'
+import Landing from './pages/Home/Landing'
+import ViewRoster from './pages/Home/ViewRoster'
 import Login from './pages/login'
-import ViewSchedule from './pages/ViewSchedule'
-import Statistics  from './pages/Statistics'
-import AddGame from './pages/AddGame'
-import DeleteGame from './pages/DeleteGame'
-import EditGame from './pages/EditGame'
-import MasterView from './pages/MasterView'
-import EditPlayer from './pages/EditPlayer'
-import AddPlayer from './pages/AddPlayer'
-import AddTeam from './pages/AddTeam'
-import EditClub from './pages/EditClub'
+import ViewSchedule from './pages/Home/ViewSchedule'
+import Statistics  from './pages/Home/Statistics'
+import AddGame from './pages/Admin/AddGame'
+import EditGame from './pages/Admin/EditGame'
+import MasterView from './pages/Admin/MasterView'
+import EditPlayer from './pages/Admin/EditPlayer'
+import AddPlayer from './pages/Admin/AddPlayer'
+import AddTeam from './pages/Admin/AddTeam'
+import EditClub from './pages/Admin/EditClub'
 import './styles/App.css'
 import {
   BrowserRouter as Router,
@@ -30,7 +29,6 @@ function App() {
           <Route path = "/Statistics" element = {<Statistics />}/>
           <Route path = "/EditGame" element = {<EditGame />}/>
           <Route path = "/AddGame" element = {<AddGame />}/>
-          <Route path = "/DeleteGame" element = {<DeleteGame />}/>
           <Route path = "/Admin" element = {<MasterView/>}/>
           <Route path = "/EditPlayer" element = {<EditPlayer />}/>
           <Route path = "/AddPlayer" element = {<AddPlayer />}/>

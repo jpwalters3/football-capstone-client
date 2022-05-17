@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { GetClubSchedule } from '../api/GetClubSchedule';
+import { GetClubSchedule } from '../../api/GetClubSchedule';
 import ShowScheduleElement from './ShowScheduleElement'
 
 const ViewClubSchedule = ({id}) => {

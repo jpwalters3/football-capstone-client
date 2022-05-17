@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/Header'
-import ClubRoster from '../components/ClubRoster'
+import Header from '../../components/Header'
+import ClubRoster from '../../components/GuestDisplays/ClubRoster'
 
 const ViewRoster = () => {
     let urlparams = new URLSearchParams(window.location.search)

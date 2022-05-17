@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import { GetPlayerData } from '../api/GetPlayerData'
-import EditClubForm from '../components/EditClubForm'
+import Header from '../../components/Header'
+import { GetPlayerData } from '../../api/GetPlayerData'
+import EditClubForm from '../../components/Forms/EditClubForm'
 
 const EditClub = () => {
 

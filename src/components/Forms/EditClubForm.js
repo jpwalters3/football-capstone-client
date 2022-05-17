@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import {EditClub} from '../api/EditClub'
-import Header from './Header'
+import {EditClub} from '../../api/EditClub'
+import Header from '../Header'
 
 const EditClubForm = ({club}) => {
     function submitHandler(e){

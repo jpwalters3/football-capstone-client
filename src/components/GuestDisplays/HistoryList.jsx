@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import HistoryDisplay from './HistoryDisplay';
-import { GetPlayerHistory } from '../api/GetPlayerHistory';
-import '../styles/History.css'
+import { GetPlayerHistory } from '../../api/GetPlayerHistory';
+import '../../styles/History.css'
 
     
 const HistoryList = ({playerId}) => {

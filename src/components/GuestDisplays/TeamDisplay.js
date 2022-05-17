@@ -10,7 +10,7 @@ const TeamDisplay = ({club}) => {
   return (
     <tr className = "team-display" key = {club.clubId}>
       <td key = {club.clubId + "img"}> 
-        <img src = {require('../img/club-' + imgId + '-logo.png')} className = "team-icon" alt =""/>
+        <img src = {require('../../img/club-' + imgId + '-logo.png')} className = "team-icon" alt =""/>
       </td>
       <td key = {club.clubId + "name"}> {club.name}</td>
       <td key = {club.clubId + "wld"}>  {club.wins}-{club.losses}-{club.draws}  </td>
