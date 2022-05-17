@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import Landing from './pages/Home/Landing'
 import ViewRoster from './pages/Home/ViewRoster'
 import Login from './pages/login'
@@ -17,10 +18,18 @@ import {
   Route,
 } from "react-router-dom";
 
+export const TokenContext = React.createContext(null);
+export const AdminContext = React.createContext(null);
+
 function App() {
+  const [token, setToken] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
+
   return (
     <div className="App">
       <Router>
+        <TokenContext.Provider value = {[token,setToken]}>
+        <AdminContext.Provider value = {[isAdmin,setIsAdmin]}>
         <Routes>
           <Route path = "/" element = {<Login/>} />
           <Route path = "/Home" element = {<Landing />}/>
@@ -35,6 +44,8 @@ function App() {
           <Route path = "/AddTeam" element = {<AddTeam />}/>
           <Route path = "/EditClub" element = {<EditClub/>}/>
         </Routes>
+        </AdminContext.Provider>
+        </TokenContext.Provider>
       </Router>
     </div>
   );
