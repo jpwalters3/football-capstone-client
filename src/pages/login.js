@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Button from '../components/Button'
 
 const Login = () => {
   return (
-    <div>
-      <h1>Premier League</h1>
-      
-      <Link to ="/Home"><button>Log In</button></Link>
+    <div className = {"bg-fuchsia-900"} >
+      <h1 className = {"text-stone-50 font-serif text-5xl mb-5 mt-15"}>Premier League</h1>
+      <p>   </p>
+      <Link to ="/Home"><Button label = "Log In">Log In</Button></Link>
       <p>TODO: Login Inputs </p>
       <p>TODO: Login database</p>
       <p>TODO: JWT Authentication</p>

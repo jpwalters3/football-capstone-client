@@ -3,6 +3,8 @@ import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ArchiveIcon, ChartSquareBarIcon } from '@heroicons/react/solid';
+import '../styles/Landing.css'
 
 const PlayerDisplay = ({player}) => {
     const [statMode, setStatMode] = useState(false);
@@ -17,8 +19,8 @@ const PlayerDisplay = ({player}) => {
                 <td>{player.positionId}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
-                    <button type="button" onClick = {()=>{setStatMode(!statMode)}}>Stats</button>
-                    <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}>History</button>
+                    <button type="button" onClick = {()=>{setStatMode(!statMode)}}><ChartSquareBarIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+                    <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}><ArchiveIcon className={"inline h-10 w-10 text-purple-500"}/></button>
                 </td>
             </tr>
 
