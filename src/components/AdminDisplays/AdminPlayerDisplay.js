@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { DeletePlayer } from '../../api/DeletePlayer';
+import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminPlayerDisplay = ({player}) => {
 
     function clickHandler(){
         DeletePlayer(player.playerId);
-        window.location.reload();
     }
     
     return(
@@ -19,8 +19,8 @@ const AdminPlayerDisplay = ({player}) => {
                 <td>{player.positionId}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
-                    <button onClick = {clickHandler}>Delete</button>
-                    <Link to = {"/EditPlayer?id=" + player.playerId}><button>Edit</button></Link>
+                    <Link to = {"/EditPlayer?id=" + player.playerId}><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
+                    <button onClick = {clickHandler}><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
                 </td>
             </tr>
         </>

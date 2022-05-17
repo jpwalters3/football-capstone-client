@@ -15,7 +15,7 @@ const ClubRoster = ({id}) => {
       <table className = "club-roster">
           <tbody>
           <tr>
-          <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th>
+          <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th><th>Stats</th><th>History</th>
           </tr>
           {players.map(p => <PlayerDisplay player = {p}/>)}
           </tbody>
