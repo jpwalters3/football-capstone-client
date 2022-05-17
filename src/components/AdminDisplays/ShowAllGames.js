@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { GetAllGames } from '../api/GetAllGames';
+import { GetAllGames } from '../../api/GetAllGames';
 import AdminMatchDisplay from './AdminMatchDisplay';
 
 const ShowAllGames = () => {

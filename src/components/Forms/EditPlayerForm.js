@@ -1,8 +1,8 @@
 import React from 'react'
-import ClubSelector from './ClubSelector'
+import ClubSelector from '../ClubSelector'
 import { useState, useEffect } from 'react'
-import { GetPlayerData } from '../api/GetPlayerData'
-import { EditPlayer } from '../api/EditPlayer'
+import { GetPlayerData } from '../../api/GetPlayerData'
+import { EditPlayer } from '../../api/EditPlayer'
 
 const EditPlayerForm = ({player}) => {
     const [toUpdate, setToUpdate] = useState(player);

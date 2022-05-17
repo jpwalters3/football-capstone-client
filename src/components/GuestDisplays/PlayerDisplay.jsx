@@ -3,7 +3,7 @@ import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
 import { useState } from 'react'
 import { ArchiveIcon, ChartSquareBarIcon } from '@heroicons/react/solid';
-import '../styles/Landing.css'
+import '../../styles/Landing.css'
 
 const PlayerDisplay = ({player}) => {
     const [statMode, setStatMode] = useState(false);

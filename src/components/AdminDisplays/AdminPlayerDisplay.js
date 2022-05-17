@@ -1,8 +1,6 @@
 import React from 'react'
-import PlayerStat from "./PlayerStat";
-import HistoryList from './HistoryList';
 import { Link } from 'react-router-dom'
-import { DeletePlayer } from '../api/DeletePlayer';
+import { DeletePlayer } from '../../api/DeletePlayer';
 
 const AdminPlayerDisplay = ({player}) => {
 

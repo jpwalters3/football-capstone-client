@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/Header'
-import ViewClubSchedule from '../components/ViewClubSchedule'
+import Header from '../../components/Header'
+import ViewClubSchedule from '../../components/GuestDisplays/ViewClubSchedule'
 
 const ViewSchedule = () => {
     let urlparams = new URLSearchParams(window.location.search)

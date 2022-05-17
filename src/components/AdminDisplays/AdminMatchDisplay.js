@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { DeleteGame } from '../api/DeleteGame'
+import { DeleteGame } from '../../api/DeleteGame'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminMatchDisplay = ({match}) => {
