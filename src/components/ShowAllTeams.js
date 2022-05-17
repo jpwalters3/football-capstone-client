@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { GetAllClubs } from '../api/GetAllClubs'
 import AdminTeamDisplay from './AdminTeamDisplay'
 import { useEffect, useState } from 'react'
+import {PlusIcon} from '@heroicons/react/solid'
 
 const ShowAllTeams = () => {
   const [teams, setTeams] = useState([{}])
@@ -12,7 +13,7 @@ const ShowAllTeams = () => {
 
   return (
     <div>
-      <Link to = "/AddTeam"><button>Add Team</button></Link>
+      <Link to = "/AddTeam"><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
       <table>
         <tbody>
           <tr>

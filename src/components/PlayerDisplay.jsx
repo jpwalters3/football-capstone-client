@@ -2,7 +2,6 @@ import React from 'react'
 import PlayerStat from "./PlayerStat";
 import HistoryList from './HistoryList';
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ArchiveIcon, ChartSquareBarIcon } from '@heroicons/react/solid';
 import '../styles/Landing.css'
 

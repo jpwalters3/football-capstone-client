@@ -1,14 +1,14 @@
 .display-element{
     display: inline-block;
-    background-color:cadetblue;
+    background-color:rgb(207, 103, 193);
   }
 .display-button{
-    background-color:cadetblue;
-    color: white;
+    background-color:rgb(207, 103, 193);
+    color: black;
     border: 2px;
     border:black;
     padding: 15px 32px;
   }
 .display-button:hover{
-    background-color:rgb(60, 131, 134);
+    background-color:rgb(150, 43, 123);
   }

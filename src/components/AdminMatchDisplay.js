@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
+
 const AdminMatchDisplay = ({match}) => {
   return (
     <tr>
@@ -11,8 +13,8 @@ const AdminMatchDisplay = ({match}) => {
         <td>{match.visitingClubId}</td>
         <td>{match.seasonId}</td>
         <td>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+            <button><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
         </td>
 
     </tr>

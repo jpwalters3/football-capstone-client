@@ -1,4 +1,5 @@
 import React from 'react'
+import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminTeamDisplay = ({club}) => {
   return (
@@ -8,8 +9,8 @@ const AdminTeamDisplay = ({club}) => {
       <td>{club.foundingDate}</td>
       <td>{club.city}</td>
       <td>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+          <button><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
       </td>
     </tr>
   )
