@@ -9,7 +9,7 @@ const AdminTeamDisplay = ({club}) => {
       <td>{club.foundingDate}</td>
       <td>{club.city}</td>
       <td>
-        <button>Edit</button>
+          <button>Edit</button>
       </td>
     </tr>
   )
