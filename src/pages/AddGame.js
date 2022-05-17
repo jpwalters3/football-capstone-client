@@ -1,28 +1,60 @@
 import React from 'react'
 import Header from '../components/Header'
+import { PostGame } from '../api/PostGame'
+import ClubSelector from '../components/ClubSelector'
 
 const AddGame = () => {
+  function FormSubmit(){
+
+    const game = {
+      matchDate: document.getElementById('date'),
+      numberOfAttendees: 0,
+      homeScore: document.getElementById('home-score'),
+      awayScore: document.getElementById('away-score'),
+      homeClubId: document.getElementById('home-team'),
+      visitingClubId: document.getElementById('away-team'),
+      seasonId: 4
+    }
+    const init = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+      },
+      body: JSON.stringify(game)
+    }
+
+    fetch("http://localhost:5101/api/match", init)
+        .then(response => {
+            alert('hello')
+            if(response.status !== 201){
+                alert ("Error")
+                return Promise.reject(response.status)
+            }
+            alert(response.json());
+            return response.json();
+        })
+        .then(json=>{
+            alert ("Successfully added new match " + json.playerId);
+        })
+  }
   return (
     <div>
       <Header />
       <h3>Add A Game</h3>
-      <p>TODO: POST fetch request</p>
-      <p>TODO: GET fetch request for teams</p>
       <p>TODO: Return on submit?</p>
 
-      <form>
-        <label>Home Team: </label>
-        <select id = "home-team">
-          <option value = "1">Chelsea</option>
-          <option value = "2">Manchester</option>
-        </select><br/>
-        <label>Away Team: </label>
-        <select id = "away-team">
-          <option value = "1">Chelsea</option>
-          <option value = "2">Manchester</option>
-        </select> <br/>
+      <form onSubmit={FormSubmit}>
+        <ClubSelector docId = 'home-team' label = 'Home Team'/>
+        <ClubSelector docId = 'away-team' label = 'Away Team'/>
         <label>Date: </label>
         <input type = "date"/> <br/>
+        <label>SCORE</label><br/>
+        <label>Home: </label>
+        <input type = 'number' id = 'home-score'/> <br/>
+        <label>Away: </label>
+        <input type = 'number' id = 'away-score' />
+        <input type = 'submit' value = 'Add' />
       </form>
     </div>
   )
