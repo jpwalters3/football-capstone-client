@@ -1,16 +1,35 @@
 import React from 'react'
 import Header from '../components/Header'
-
+import { useState } from 'react'
+import { PostTeam } from '../api/PostTeam'
 const AddTeam = () => {
+  const [team, setTeam] = useState(
+    {
+      name: "",
+      foundingDate: "1970-01-01",
+      city: ""
+    });
+
+  function submitHandler(e){
+    e.preventDefault();
+    setTeam({
+      name: document.getElementById('name').value,
+      foundingDate: document.getElementById('founding-date').value,
+      city: document.getElementById('city').value
+    });
+    PostTeam(team);
+  }
   return (
     <div>
         <Header/>
-        <p>TODO: POST fetch request</p>
-        <p>TODO: other input fields</p>
-        <p>STRETCH: add team logo</p>
-      <form>
+        <p>STRETCH: user image upload</p>
+      <form onSubmit = {submitHandler}>
           <label>Name: </label>
-          <input type = "text" /> <br/>
+          <input type = "text" id = "name"/> <br/>
+          <label>Founding Date: </label>
+          <input type = "date" id = "founding-date"/> <br/>
+          <label>City: </label>
+          <input type = "text" id ="city"/> <br/>
           <input type = "submit" value = "Add Team" />
       </form>
     </div>

@@ -8,6 +8,7 @@ const AdminPlayerDisplay = ({player}) => {
 
     function clickHandler(){
         DeletePlayer(player.playerId);
+        window.location.reload();
     }
     
     return(

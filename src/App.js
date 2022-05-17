@@ -10,6 +10,7 @@ import MasterView from './pages/MasterView'
 import EditPlayer from './pages/EditPlayer'
 import AddPlayer from './pages/AddPlayer'
 import AddTeam from './pages/AddTeam'
+import EditClub from './pages/EditClub'
 import './styles/App.css'
 import {
   BrowserRouter as Router,
@@ -34,6 +35,7 @@ function App() {
           <Route path = "/EditPlayer" element = {<EditPlayer />}/>
           <Route path = "/AddPlayer" element = {<AddPlayer />}/>
           <Route path = "/AddTeam" element = {<AddTeam />}/>
+          <Route path = "/EditClub" element = {<EditClub/>}/>
         </Routes>
       </Router>
     </div>

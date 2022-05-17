@@ -14,7 +14,6 @@ export async function PostGame(game){
                 alert ("Error")
                 return Promise.reject(response.status)
             }
-            alert(response.json());
             return response.json();
         })
         .then(json=>{

@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DeleteGame } from '../api/DeleteGame'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminMatchDisplay = ({match}) => {
+  function clickHandler(){
+      DeleteGame(match.matchId);
+      window.location.reload();
+  }
   return (
     <tr>
         <td>{match.matchId}</td>
@@ -14,7 +19,7 @@ const AdminMatchDisplay = ({match}) => {
         <td>{match.seasonId}</td>
         <td>
             <button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button>
-            <button><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+            <button onClick = {clickHandler}><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
         </td>
 
     </tr>

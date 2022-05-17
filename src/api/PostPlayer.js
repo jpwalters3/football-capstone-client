@@ -14,7 +14,6 @@ export async function PostPlayer(player){
                 alert ("Error " + response.status);
                 return Promise.reject(response.status);
             }
-            alert(response.json());
             return response.json();
         })
         .then(json=>{
