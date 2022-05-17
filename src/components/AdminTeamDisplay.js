@@ -9,8 +9,7 @@ const AdminTeamDisplay = ({club}) => {
       <td>{club.foundingDate}</td>
       <td>{club.city}</td>
       <td>
-          <button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button>
-          <button><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+        <button>Edit</button>
       </td>
     </tr>
   )
