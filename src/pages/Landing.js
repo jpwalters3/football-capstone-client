@@ -17,7 +17,7 @@ const Landing = () => {
     <table id = "team-records">
         <tbody>
             <tr>
-                <th></th><th>team</th><th>record</th><th>points</th>
+                <th></th><th>Teams</th><th>Record</th><th>Points</th>
             </tr>
             {clubs.map(team => <TeamDisplay club = {team}/>)}
         </tbody>
