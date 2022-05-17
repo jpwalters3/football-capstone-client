@@ -1,4 +1,5 @@
 import React from 'react'
+import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminTeamDisplay = ({club}) => {
   return (

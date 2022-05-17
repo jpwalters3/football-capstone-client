@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { GetAllPlayers } from '../api/GetAllPlayers'
 import { Link } from 'react-router-dom'
+import Button from '../components/Button'
+import {PlusIcon} from '@heroicons/react/solid'
 
 function ViewAllPlayers(){
 
@@ -15,7 +17,7 @@ function ViewAllPlayers(){
 
     return(
         <>
-            <Link to = {"/AddPlayer"}> <button>Add New Player</button></Link>
+            <Link to = {"/AddPlayer"}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
             <table className = "roster-display">
                 <tbody>
                     <tr>

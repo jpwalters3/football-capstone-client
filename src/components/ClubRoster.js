@@ -9,7 +9,7 @@ const ClubRoster = ({id}) => {
 
     useEffect(()=>{
         GetPlayersByTeam(id, setPlayers)
-    }, [])
+    }, [id]);
   return (
     <div>
       <table className = "club-roster">
