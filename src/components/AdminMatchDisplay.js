@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DeleteGame } from '../api/DeleteGame'
 const AdminMatchDisplay = ({match}) => {
+  function clickHandler(){
+      DeleteGame(match.matchId);
+      window.location.reload();
+  }
   return (
     <tr>
         <td>{match.matchId}</td>
@@ -12,7 +17,7 @@ const AdminMatchDisplay = ({match}) => {
         <td>{match.seasonId}</td>
         <td>
             <button>Edit</button>
-            <button>Delete</button>
+            <button onClick = {clickHandler}>Delete</button>
         </td>
 
     </tr>
