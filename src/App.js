@@ -27,9 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <TokenContext.Provider value = {[token,setToken]}>
+      <TokenContext.Provider value = {[token,setToken]}>
         <AdminContext.Provider value = {[isAdmin,setIsAdmin]}>
+      <Router>
+        
         <Routes>
           <Route path = "/" element = {<Login/>} />
           <Route path = "/Home" element = {<Landing />}/>
@@ -44,9 +45,10 @@ function App() {
           <Route path = "/AddTeam" element = {<AddTeam />}/>
           <Route path = "/EditClub" element = {<EditClub/>}/>
         </Routes>
-        </AdminContext.Provider>
-        </TokenContext.Provider>
+        
       </Router>
+      </AdminContext.Provider>
+        </TokenContext.Provider>
     </div>
   );
 }

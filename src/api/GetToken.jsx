@@ -1,14 +1,9 @@
 //to be in app.js
 import React from "react";
 import {useState, useEffect} from "react";
-import { AdminContext } from '../App';
-import { TokenContext } from '../App';
 
-export async function GetToken(loginCredentials){
 
-    const [token, setToken] = React.useContext(TokenContext);
-    const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
-
+export async function GetToken(loginCredentials, setToken, setIsAdmin){
     const init = {
         method: "POST",
         headers: {
@@ -22,12 +17,13 @@ export async function GetToken(loginCredentials){
         .then(response => {
             if(response.status !== 200){
                 alert(`Error ${response.status}: ${response.statusText}`);
-                // setToken("errorToken");
+                setToken("errorToken");
                 return Promise.reject("error");
             }
             return response.json();
         })
         .then(json =>{
+            console.log(json);
             setToken(json);
             setIsAdmin(true);
         })
