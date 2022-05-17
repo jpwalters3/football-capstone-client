@@ -24,7 +24,7 @@ export async function GetToken(loginCredentials, setToken, setIsAdmin){
             return response.json();
         })
         .then(json =>{
-            console.log(json);
+            //console.log(json);    //Testing purposes
             setToken(json);
             setIsAdmin(true);
         })
