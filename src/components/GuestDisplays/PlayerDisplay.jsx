@@ -8,6 +8,18 @@ import '../../styles/Landing.css'
 const PlayerDisplay = ({player}) => {
     const [statMode, setStatMode] = useState(false);
     const [historyMode, setHistoryMode] = useState(false);
+    if (statMode) {
+        var color = 'slate-900';
+    }
+    else{
+        color = 'purple-500';
+    }
+    if (historyMode) {
+        var color2 = 'slate-900';
+    }
+    else{
+        color2 = 'purple-500';
+    }
     return(
         <>
             <tr>
@@ -18,8 +30,10 @@ const PlayerDisplay = ({player}) => {
                 <td>{player.positionId}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
-                    <button type="button" onClick = {()=>{setStatMode(!statMode)}}><ChartSquareBarIcon className={"inline h-10 w-10 text-purple-500"}/></button>
-                    <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}><ArchiveIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+                    <button type="button" onClick = {()=>{setStatMode(!statMode)}}><ChartSquareBarIcon className={`inline h-10 w-10 text-${color}`}/></button>
+                </td>
+                <td>
+                <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}><ArchiveIcon className={`inline h-10 w-10 text-${color2}`}/></button>
                 </td>
             </tr>
 

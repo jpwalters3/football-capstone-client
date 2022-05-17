@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { GetAllGames } from '../../api/GetAllGames';
 import AdminMatchDisplay from './AdminMatchDisplay';
+import {PlusIcon} from '@heroicons/react/solid'
 
 const ShowAllGames = () => {
     const [matches, setMatches] = useState([{}]);
@@ -11,7 +12,7 @@ const ShowAllGames = () => {
     }, [])
   return (
     <div>
-      <Link to = '/AddGame'><button>Add New Match</button></Link>
+      <Link to = '/AddGame'><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
       <table>
           <tbody>
               {matches.map( (m) => <AdminMatchDisplay match = {m}/>)}

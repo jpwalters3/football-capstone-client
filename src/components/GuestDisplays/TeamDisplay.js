@@ -17,6 +17,8 @@ const TeamDisplay = ({club}) => {
       <td key = {club.clubId + "points"}>  {club.points} points</td>
       <td key = {club.clubId + "links"}> 
         <Link key = {club.clubId + "roster"} to={"/Roster?id=" + club.clubId}> <ClipboardIcon className={"inline h-10 w-10 text-purple-500"}/> </Link>
+      </td>
+      <td>
         <Link key = {club.clubId + "schedule"} to={"/Schedule?id=" + club.clubId}> <CalendarIcon className={"inline h-10 w-10 text-purple-500"}/> </Link>
       </td>
     </tr>
