@@ -1,7 +1,6 @@
 import React from 'react'
-import Header from '../../components/Header'
 import { PostGame } from '../../api/Match'
-import ClubSelector from '../../components/ClubSelector'
+import ClubSelector from '../ClubSelector'
 import '../../styles/Form.css'
 const AddGame = () => {
 
@@ -22,8 +21,6 @@ const AddGame = () => {
   }
   return (
     <div>
-      <Header />
-      <h3>Add A Game</h3>
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "new-match">
         <form onSubmit={FormSubmit}>
           <div class="form-group mb-6">
@@ -64,6 +61,7 @@ const AddGame = () => {
               ease-in-out">Add</button>
         </form>
       </div>
+      <br/>
     </div>
   )
 }

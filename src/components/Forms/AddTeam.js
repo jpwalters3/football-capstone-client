@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/Header'
 import { useState } from 'react'
 import { PostTeam } from '../../api/Club'
 import '../../styles/Form.css'
@@ -16,7 +15,6 @@ const AddTeam = () => {
   }
   return (
     <div>
-        <Header/>
         <p>STRETCH: user image upload</p>
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "new-club">
         <form onSubmit = {submitHandler}>
@@ -51,6 +49,7 @@ const AddTeam = () => {
                 ease-in-out">Add</button>
         </form>
       </div>
+      <br/>
     </div>
   )
 }

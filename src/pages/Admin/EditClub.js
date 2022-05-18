@@ -21,7 +21,6 @@ const EditClub = () => {
   return (
     <div>
         <Header />
-        <p>TODO: PUT fetch request</p>
 
       <EditClubForm club = {club}/>
     </div>

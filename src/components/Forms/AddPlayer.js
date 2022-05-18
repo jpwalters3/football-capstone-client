@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../../components/Header'
-import ClubSelector from '../../components/ClubSelector'
+import Header from '../Header'
+import ClubSelector from '../ClubSelector'
 import { PostPlayer } from '../../api/Player'
 import '../../styles/Form.css'
 
@@ -23,8 +23,6 @@ const AddPlayer = () => {
   
   return (
     <div>
-      <Header/>
-      <h3>Add a New Player</h3>
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "new-player">
         <form onSubmit={FormSubmit}>
             <div class="form-group mb-6">
@@ -75,6 +73,7 @@ const AddPlayer = () => {
 
         </form>
       </div>
+      <br/>
     </div>
   )
 }
