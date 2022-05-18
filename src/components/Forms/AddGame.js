@@ -2,7 +2,9 @@ import React from 'react'
 import { PostGame } from '../../api/Match'
 import ClubSelector from '../ClubSelector'
 import '../../styles/Form.css'
+import { TokenContext } from '../../App';
 const AddGame = () => {
+  const [token, setToken] = React.useContext(TokenContext);
 
   function FormSubmit(e){
     
@@ -17,7 +19,7 @@ const AddGame = () => {
       visitingClubId: document.getElementById('away-team').value,
       seasonId: 4
     }
-    PostGame(game);
+    PostGame(game,token);
   }
   return (
     <div>
