@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { GetAllGames } from '../../api/Match';
 import AdminMatchDisplay from './AdminMatchDisplay';
 import {PlusIcon} from '@heroicons/react/solid'
@@ -25,6 +24,9 @@ const ShowAllGames = () => {
       </div>
       <table>
           <tbody>
+            <tr>
+              <th>ID</th><th>Date</th><th>Home Club</th><th>Home Score</th><th>Away Score</th><th>Away Club</th><th>Season</th>
+            </tr>
               {matches.map( (m) => <AdminMatchDisplay match = {m}/>)}
           </tbody>
       </table>
