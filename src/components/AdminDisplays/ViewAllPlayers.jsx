@@ -8,7 +8,11 @@ import AddPlayer from '../Forms/AddPlayer'
 
 function ViewAllPlayers(){
     const [show, setShow] = useState(false);
-    const [players, setPlayers] = useState([{}]);
+    const [players, setPlayers] = 
+    useState([{
+        playerId: 1,
+        dateOfBirth: '1970-01-01'
+    }]);
 
     useEffect(()=> {
         GetAllPlayers(setPlayers);

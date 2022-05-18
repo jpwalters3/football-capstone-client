@@ -50,19 +50,19 @@ const EditMatchForm = ({match}) => {
             <label>Score</label><br/>
             <div class="form-group mb-6">
                 <label>Home: </label>
-                <input type = 'number' id = 'home-score' value = {homeScore}
+                <input type = 'number' id = 'home-score' value = {homeScore} min = '0' max = '100'
                 onChange = {(e)=>setHomeScore(e.target.value)}
                 class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
             <div class="form-group mb-6">
                 <label>Away: </label>
-                <input type = 'number' id = 'away-score' value = {awayScore}
+                <input type = 'number' id = 'away-score' value = {awayScore} min = '0' max = '100'
                 onChange = {(e)=>setAwayScore(e.target.value)}
                 class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
             <div class="form-group mb-6">
                 <label>Attendence: </label>
-                <input type = 'number' id = 'attendence' value = {attendence}
+                <input type = 'number' id = 'attendence' value = {attendence} min = '0' max = '99999999999'
                 onChange = {(e)=>setAttendence(e.target.value)}
                 class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
@@ -82,7 +82,7 @@ const EditMatchForm = ({match}) => {
               active:bg-blue-800 active:shadow-lg
               transition
               duration-150
-              ease-in-out">Add</button>
+              ease-in-out">Update</button>
         </form>
     </div>
   )

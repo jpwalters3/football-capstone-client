@@ -10,7 +10,7 @@ const AdminMatchDisplay = ({match}) => {
   return (
     <tr>
         <td>{match.matchId}</td>
-        <td>{match.matchDate}</td>
+        <td>{match.matchDate.substring(0,10)}</td>
         <td>{match.homeClubName}</td>
         <td>{match.homeScore}</td>
         <td>{match.awayScore}</td>

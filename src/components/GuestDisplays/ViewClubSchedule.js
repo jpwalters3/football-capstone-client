@@ -4,7 +4,11 @@ import { GetClubSchedule } from '../../api/Match';
 import ShowScheduleElement from './ShowScheduleElement'
 
 const ViewClubSchedule = ({id}) => {
-    const [matches, setMatches] = useState ([{}]);
+    const [matches, setMatches] = 
+    useState ([{
+      matchId: 1,
+      matchDate: '1970-01-01'
+    }]);
 
     useEffect(()=>{
         GetClubSchedule(id, setMatches)
