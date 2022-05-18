@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { PostTeam } from '../../api/Club'
 import '../../styles/Form.css'
 const AddTeam = () => {
-
+  let today = new Date();
   function submitHandler(e){
     e.preventDefault();
     const team = {
@@ -20,11 +20,13 @@ const AddTeam = () => {
         <form onSubmit = {submitHandler}>
           <div class="form-group mb-6">
             <label>Name: </label>
-            <input type = "text" id = "name" class ="form-controll border border-solid border-gray-300"/> <br/>
+            <input type = "text" id = "name" maxLength="49"
+            class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <div class="form-group mb-6">
             <label>Founding Date: </label>
-            <input type = "date" id = "founding-date" class ="form-controll border border-solid border-gray-300"/> <br/>
+            <input type = "date" id = "founding-date"
+            class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <div class="form-group mb-6">
             <label>City: </label>
