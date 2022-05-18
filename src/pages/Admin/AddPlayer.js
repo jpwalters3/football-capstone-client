@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header'
 import ClubSelector from '../../components/ClubSelector'
-import { PostPlayer } from '../../api/PostPlayer'
+import { PostPlayer } from '../../api/Player'
 
 const AddPlayer = () => {
   function FormSubmit(e){

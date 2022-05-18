@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { GetPlayerStats } from '../../api/GetPlayerStats'
+import { GetPlayerStats } from '../../api/Player'
 const PlayerStat = ({playerId}) => {
     const [playerData, setPlayerData] = useState({})
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../components/Header'
-import { PostGame } from '../../api/PostGame'
+import { PostGame } from '../../api/Match'
 import ClubSelector from '../../components/ClubSelector'
 
 const AddGame = () => {

@@ -2,7 +2,7 @@ import AdminPlayerDisplay from "./AdminPlayerDisplay";
 import '../../styles/Roster.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { GetAllPlayers } from '../../api/GetAllPlayers'
+import { GetAllPlayers } from '../../api/Player'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
 import {PlusIcon} from '@heroicons/react/solid'

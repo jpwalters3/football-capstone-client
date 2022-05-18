@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { GetAllClubs } from '../api/GetAllClubs'
+import { GetAllClubs } from '../api/Club'
 
 const ClubSelector = ({docId, label}) => {
     const [clubs, setClubs] = useState ([{

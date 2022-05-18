@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { GetAllClubs } from '../../api/GetAllClubs'
+import { GetAllClubs } from '../../api/Club'
 import AdminTeamDisplay from './AdminTeamDisplay'
 import { useEffect, useState } from 'react'
 import {PlusIcon} from '@heroicons/react/solid'

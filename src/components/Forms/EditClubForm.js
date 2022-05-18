@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import {EditClub} from '../../api/EditClub'
+import {EditClub} from '../../api/Club'
 import Header from '../Header'
 
 const EditClubForm = ({club}) => {

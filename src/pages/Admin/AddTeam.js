@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { useState } from 'react'
-import { PostTeam } from '../../api/PostTeam'
+import { PostTeam } from '../../api/Club'
 const AddTeam = () => {
   const [team, setTeam] = useState(
     {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DeletePlayer } from '../../api/DeletePlayer';
+import { DeletePlayer } from '../../api/Player';
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminPlayerDisplay = ({player}) => {

@@ -4,7 +4,7 @@ import '../../styles/Landing.css'
 import Header from '../../components/Header'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { GetClubRecords } from '../../api/GetClubRecords'
+import { GetClubRecords } from '../../api/Club'
 
 const Landing = () => {
     const [clubs, setClubs] = useState([{}]);
