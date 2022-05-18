@@ -15,7 +15,7 @@ const MostCleanSheetsList = ({seasonId}) => {
                 <table>
                     <tbody>
                         <tr>
-                            <th className='club'>Club</th><th className='name'>Name</th><th className='cleanSheets'>Clean Sheets</th>
+                            <th className='club'>Club</th><th className='name'>Name</th><th className='stat'>Clean Sheets</th>
                         </tr>
                         {mostCleanSheetsList.map(m => <MostCleanSheetsDisplay mostCleanSheets = {m}/>)}
                     </tbody>

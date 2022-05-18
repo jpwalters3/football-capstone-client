@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import TopScorerDisplay from './TopScorerDisplay';
 import { GetTopScorer } from '../../api/TopStats';
-import '../../styles/History.css'
+import '../../styles/Stat.css'
 
     
 const TopScorerList = ({seasonId}) => {
@@ -15,7 +15,7 @@ const TopScorerList = ({seasonId}) => {
                 <table>
                     <tbody>
                         <tr>
-                            <th className='club'>Club</th><th className='name'>Name</th><th className='goals'>Goals</th>
+                            <th className='club'>Club</th><th className='name'>Name</th><th className='stat'>Goals</th>
                         </tr>
                         {topScorerList.map(s => <TopScorerDisplay topScorer = {s}/>)}
                     </tbody>

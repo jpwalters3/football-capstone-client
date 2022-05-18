@@ -1,0 +1,26 @@
+table{
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto; 
+}
+tr {
+    /* border: solid 1px #666; */
+}
+/* tr .blank{
+    width: 20vw;
+    border: solid 1px #666;
+} */
+tr .club{
+    width: 30vw;
+    border: solid 1px #666;
+}
+tr .name{
+    width: 20vw;
+    border: solid 1px #666;
+}
+tr .stat{
+    width: 20vw;
+    border: solid 1px #666;
+} 
