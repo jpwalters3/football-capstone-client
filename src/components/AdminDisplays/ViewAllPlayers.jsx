@@ -6,18 +6,24 @@ import { GetAllPlayers } from '../../api/Player'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
 import {PlusIcon} from '@heroicons/react/solid'
+import AddPlayer from '../Forms/AddPlayer'
 
 function ViewAllPlayers(){
-
+    const [show, setShow] = useState(false);
     const [players, setPlayers] = useState([{}]);
 
     useEffect(()=> {
         GetAllPlayers(setPlayers);
     }, [players])
 
+    function addClickHandler(){
+        setShow(!show);
+    }
+
     return(
         <>
-            <Link to = {"/Admin/AddPlayer"}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
+            <div onClick = {addClickHandler}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></div>
+            {show && <AddPlayer />}
             <table className = "roster-display">
                 <tbody>
                     <tr>

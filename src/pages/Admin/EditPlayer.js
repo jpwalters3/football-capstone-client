@@ -25,7 +25,6 @@ const EditPlayer = () => {
   return (
     <div>
         <Header />
-        <p>TODO: PUT fetch request</p>
 
       <EditPlayerForm player = {player}/>
     </div>

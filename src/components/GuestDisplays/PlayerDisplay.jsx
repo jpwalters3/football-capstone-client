@@ -36,7 +36,7 @@ const PlayerDisplay = ({player}) => {
                 <button type="button" onClick = {()=>{setHistoryMode(!historyMode)}}><ArchiveIcon className={`inline h-10 w-10 text-${color2}`}/></button>
                 </td>
             </tr>
-
+            
             {statMode && <PlayerStat playerId={player.playerId}/>}
             {historyMode && <HistoryList playerId={player.playerId}/>}
         </>

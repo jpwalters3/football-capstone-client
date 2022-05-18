@@ -4,12 +4,9 @@ import ViewRoster from './pages/Home/ViewRoster'
 import Login from './pages/login'
 import ViewSchedule from './pages/Home/ViewSchedule'
 import Statistics  from './pages/Home/Statistics'
-import AddGame from './pages/Admin/AddGame'
 import EditGame from './pages/Admin/EditGame'
 import MasterView from './pages/Admin/MasterView'
 import EditPlayer from './pages/Admin/EditPlayer'
-import AddPlayer from './pages/Admin/AddPlayer'
-import AddTeam from './pages/Admin/AddTeam'
 import EditClub from './pages/Admin/EditClub'
 import './styles/App.css'
 import {
@@ -38,11 +35,8 @@ function App() {
           <Route path = "/Home/Schedule" element = {<ViewSchedule />}/>
           <Route path = "/Statistics" element = {<Statistics />}/>
           <Route path = "/Admin/EditGame" element = {<EditGame />}/>
-          <Route path = "/Admin/AddGame" element = {<AddGame />}/>
           <Route path = "/Admin" element = {<MasterView/>}/>
           <Route path = "/Admin/EditPlayer" element = {<EditPlayer />}/>
-          <Route path = "/Admin/AddPlayer" element = {<AddPlayer />}/>
-          <Route path = "/Admin/AddTeam" element = {<AddTeam />}/>
           <Route path = "/Admin/EditClub" element = {<EditClub/>}/>
         </Routes>
         
