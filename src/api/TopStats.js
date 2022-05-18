@@ -22,7 +22,7 @@ export async function GetSeasonRecords(set){
             return response.json();
         })
         .then(json =>{
-            set(json);
+            set(json); 
         })
 }
 
