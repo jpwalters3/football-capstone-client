@@ -12,19 +12,25 @@ export async function GetAllClubs(set){
     })
 }
 
-export async function EditClub(club){
+export async function EditClub(club, token){
     const init = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(club)
     };
 
     fetch("http://localhost:5101/api/club", init)
         .then(response=>{
-            if(response.status !== 200){
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nEdit unsuccessful. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 200){
+                
                 alert("error: " + response.status);
                 return Promise.reject(response.status);
             }
@@ -35,19 +41,24 @@ export async function EditClub(club){
         })
 }
 
-export async function PostTeam(club){
+export async function PostTeam(club, token){
     const init = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(club)
     } 
     alert(JSON.stringify(club));
     fetch("http://localhost:5101/api/club", init)
         .then(response => {
-            if(response.status !== 201){
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nTeam not made. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 201){
                 alert ("Error " + response.status);
                 return Promise.reject(response.body);
             }
@@ -99,18 +110,23 @@ export async function GetClubData(id, set){
     .then(json => set(json))
 }
 
-export async function DeleteClub(id){
+export async function DeleteClub(id, token){
     const init = {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         }
     }
 
     fetch("http://localhost:5101/api/club/" + id, init)
     .then(response => {
-        if(response.status !== 200){
+        if(response.status == 401){
+            alert(`Error ${response.status}: ${response.statusText}\nDelete unsuccessful. Must be logged in as Admin to perform this task.`);
+            return Promise.reject(response.status);
+        }
+        else if(response.status !== 200){
             alert("error: " + response.status);
         }
         else alert("Team " + id + " deleted")

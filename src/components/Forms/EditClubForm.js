@@ -3,14 +3,17 @@ import {useState, useEffect} from 'react'
 import {EditClub} from '../../api/Club'
 import Header from '../Header'
 import '../../styles/Form.css'
+import { TokenContext } from '../../App';
 
 const EditClubForm = ({club}) => {
+  const [token, setToken] = React.useContext(TokenContext);
+
     function submitHandler(e){
         e.preventDefault();
         club.name = name;
         club.foundingDate = foundingDate;
         club.city = city;
-        EditClub(club);
+        EditClub(club, token);
     }
     useEffect(()=>{
         setName(club.name);

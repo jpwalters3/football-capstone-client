@@ -25,7 +25,7 @@ export async function GetToken(loginCredentials, setToken, setIsAdmin){
         })
         .then(json =>{
             //console.log(json);    //Testing purposes
-            setToken(json);
+            setToken(json.token);
             setIsAdmin(true);
         })
         .catch((error)=> {

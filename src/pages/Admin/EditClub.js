@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import { GetClubData } from '../../api/Club'
 import EditClubForm from '../../components/Forms/EditClubForm'
+import { AdminContext } from '../../App';
+import Unauthorized from '../Unauthorized';
 
 const EditClub = () => {
+
+  const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
 
   const [club, setClub] = 
   useState({
@@ -19,11 +23,15 @@ const EditClub = () => {
 
     let urlparams = new URLSearchParams(window.location.search)
   return (
-    <div>
-        <Header />
-
-      <EditClubForm club = {club}/>
-    </div>
+    <>
+      {isAdmin ?
+        <div>
+          <Header />
+          <EditClubForm club = {club}/>
+        </div>
+      :
+        <Unauthorized/>}
+    </>
   )
 }
 
