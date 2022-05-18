@@ -2,10 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { DeleteGame } from '../../api/Match'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
+import { TokenContext } from '../../App';
 
 const AdminMatchDisplay = ({match}) => {
+  const [token, setToken] = React.useContext(TokenContext);
+  
   function clickHandler(){
-      if(window.confirm("This change is permanate, are you sure you want to delete?")) DeleteGame(match.matchId);
+      if(window.confirm("This change is permanent, are you sure you want to delete?")) DeleteGame(match.matchId, token);
   }
   return (
     <tr>
