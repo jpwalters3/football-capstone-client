@@ -15,12 +15,12 @@ const PlayerStat = ({playerId}) => {
         <td colSpan="9">
         <table className = "player-stats">
             <tbody>
-            <tr>Shots: {playerData.shots} </tr>
-            <tr>On Target: {playerData.shotsOnTarget}</tr>
-            <tr>Goals: {playerData.goals}</tr>
-            <tr>Assits: {playerData.assists}</tr>
-            <tr>Saves: {playerData.saves}</tr>
-            <tr>Fouls: {playerData.fouls}</tr>
+            <tr><td>Shots:</td><td> {playerData.shots}</td> </tr>
+            <tr><td>On Target: </td><td>{playerData.shotsOnTarget}</td></tr>
+            <tr><td>Goals: </td><td>{playerData.goals}</td></tr>
+            <tr><td>Assits: </td><td>{playerData.assists}</td></tr>
+            <tr><td>Saves: </td><td>{playerData.saves}</td></tr>
+            <tr><td>Fouls: </td><td>{playerData.fouls}</td></tr>
             </tbody>
         </table>
         </td>
