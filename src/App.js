@@ -34,16 +34,16 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Login/>} />
           <Route path = "/Home" element = {<Landing />}/>
-          <Route path = "/Roster" element = {<ViewRoster />}/>
-          <Route path = "/Schedule" element = {<ViewSchedule />}/>
+          <Route path = "/Home/Roster" element = {<ViewRoster />}/>
+          <Route path = "/Home/Schedule" element = {<ViewSchedule />}/>
           <Route path = "/Statistics" element = {<Statistics />}/>
-          <Route path = "/EditGame" element = {<EditGame />}/>
-          <Route path = "/AddGame" element = {<AddGame />}/>
+          <Route path = "/Admin/EditGame" element = {<EditGame />}/>
+          <Route path = "/Admin/AddGame" element = {<AddGame />}/>
           <Route path = "/Admin" element = {<MasterView/>}/>
-          <Route path = "/EditPlayer" element = {<EditPlayer />}/>
-          <Route path = "/AddPlayer" element = {<AddPlayer />}/>
-          <Route path = "/AddTeam" element = {<AddTeam />}/>
-          <Route path = "/EditClub" element = {<EditClub/>}/>
+          <Route path = "/Admin/EditPlayer" element = {<EditPlayer />}/>
+          <Route path = "/Admin/AddPlayer" element = {<AddPlayer />}/>
+          <Route path = "/Admin/AddTeam" element = {<AddTeam />}/>
+          <Route path = "/Admin/EditClub" element = {<EditClub/>}/>
         </Routes>
         
       </Router>

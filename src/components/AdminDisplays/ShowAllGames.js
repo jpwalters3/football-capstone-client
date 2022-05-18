@@ -12,7 +12,7 @@ const ShowAllGames = () => {
     }, [])
   return (
     <div>
-      <Link to = '/AddGame'><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
+      <Link to = '/Admin/AddGame'><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
       <table>
           <tbody>
               {matches.map( (m) => <AdminMatchDisplay match = {m}/>)}

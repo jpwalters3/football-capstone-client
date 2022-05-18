@@ -13,8 +13,7 @@ const Header = () => {
           <Link to="/Home"><Button label={"Home"}/></Link>
           <Link to="/Statistics"><Button label={"Statistics"}/></Link>
           <Link to = "/"><Button label={"Log Out"} onClick = {()=>setIsAdmin(false)}/></Link>
-          {/* <Link to ="/Admin"><Button label={"Admin View"}/></Link> */}
-          {isAdmin ? <Link to ="/Admin"><Button label={"Admin View"} secondary/></Link>: <></>}
+          {isAdmin ? <Link to ="/Admin"><Button label={"Admin"} secondary/></Link>: <></>}
       </nav>
     </div>
   )

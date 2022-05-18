@@ -17,7 +17,7 @@ function ViewAllPlayers(){
 
     return(
         <>
-            <Link to = {"/AddPlayer"}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
+            <Link to = {"/Admin/AddPlayer"}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
             <table className = "roster-display">
                 <tbody>
                     <tr>

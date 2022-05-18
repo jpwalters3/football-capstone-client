@@ -13,7 +13,7 @@ const ShowAllTeams = () => {
 
   return (
     <div>
-      <Link to = "/AddTeam"><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
+      <Link to = "/Admin/AddTeam"><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
       <table>
         <tbody>
           <tr>
