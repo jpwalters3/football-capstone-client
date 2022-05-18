@@ -3,20 +3,21 @@ import TopScorerList from './TopScorerList';
 //import '../styles/history.css'
 
 const SeasonDisplay = ({season}) => {
-    const [topScorerMode, setTopScorerMode] = useState(true);
+    const [topStatMode, setTopStatMode] = useState('');
+    const topScorerMode = useState(false)
     return(
         <>
             <tr>
                 <td className='year'>{season.year}</td>
                 <td className='entry'>
-                <select>
-        <option value = {()=>{setTopScorerMode(topScorerMode)}}>Goals</option>
+                <select onChange={(e) => setTopStatMode(e.target.value)}>
+        <option value = "1">Goals</option>
         <option value = "2">Assists</option>
         <option value = "3">Clean Sheets</option>
       </select></td>
             </tr>
 
-            {topScorerMode && <TopScorerList seasonId={season.seasonId}/>}
+            {topStatMode === "1" && <TopScorerList seasonId={season.seasonId}/>}
         </>
     );
 }
