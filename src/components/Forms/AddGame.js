@@ -3,6 +3,8 @@ import { PostGame } from '../../api/Match'
 import ClubSelector from '../ClubSelector'
 import '../../styles/Form.css'
 const AddGame = () => {
+  const today = new Date();
+  const maxDate = today.getFullYear() + '/' + String(today.getDate()).padStart(2, '0') + '/' + String(today.getMonth() + 1).padStart(2, '0');
 
   function FormSubmit(e){
     
@@ -31,16 +33,19 @@ const AddGame = () => {
           </div>
           <div class="form-group mb-6">
             <label>Date: </label>
-            <input type = "date" id = "match-date" class ="form-controll border border-solid border-gray-300"/> <br/>
+            <input type = "date" id = "match-date"
+            class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <label>SCORE</label><br/>
           <div class="form-group mb-6">
           <label>Home: </label>
-          <input type = 'number' id = 'home-score' class ="form-controll border border-solid border-gray-300"/> <br/>
+          <input type = 'number' id = 'home-score' min = '0' max = '100'
+          class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <div class="form-group mb-6">
           <label>Away: </label>
-          <input type = 'number' id = 'away-score' class ="form-controll border border-solid border-gray-300"/> <br/>
+          <input type = 'number' id = 'away-score' min = '0' max = '100'
+          class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <button type="submit" class="
               px-6

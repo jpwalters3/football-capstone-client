@@ -93,7 +93,7 @@ const EditPlayerForm = ({player}) => {
               active:bg-blue-800 active:shadow-lg
               transition
               duration-150
-              ease-in-out">Add</button>
+              ease-in-out">Update</button>
           </form>
         </div>
     </div>

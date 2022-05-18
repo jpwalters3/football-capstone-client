@@ -27,15 +27,18 @@ const AddPlayer = () => {
         <form onSubmit={FormSubmit}>
             <div class="form-group mb-6">
               <label>First Name: </label>
-              <input type = "text" id = "firstName" class ="form-controll border border-solid border-gray-300"/> <br/>
+              <input type = "text" id = "firstName" maxlength = "49"
+              class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
             <div class="form-group mb-6">
               <label>Last Name: </label>
-              <input type = "text" id = "lastName" class ="form-controll border border-solid border-gray-300"/> <br/>
+              <input type = "text" id = "lastName" maxlength="49"
+              class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
             <div class="form-group mb-6">
               <label>Date of Birth: </label>
-              <input type = "date" id = "bday" class ="form-controll border border-solid border-gray-300"/> <br/>
+              <input type = "date" id = "bday"
+              class ="form-controll border border-solid border-gray-300"/> <br/>
             </div>
             <div class="form-group mb-6">
             <label>Position: </label>

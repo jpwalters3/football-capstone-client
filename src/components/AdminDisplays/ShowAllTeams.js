@@ -7,11 +7,15 @@ import {PlusIcon} from '@heroicons/react/solid'
 import AddTeam from '../Forms/AddTeam'
 
 const ShowAllTeams = () => {
-  const [teams, setTeams] = useState([{}])
+  const [teams, setTeams] = 
+    useState([{
+      clubId: 1,
+      foundingDate: '1970-01-01'
+    }])
   const [show, setShow] = useState(false)
   useEffect(()=>{
     GetAllClubs(setTeams);
-  }, [])
+  }, [teams])
 
   function addClickHandler(){
     setShow(!show)

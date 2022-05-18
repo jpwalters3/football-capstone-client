@@ -28,19 +28,19 @@ const EditClubForm = ({club}) => {
         <form onSubmit = {submitHandler}>
           <div class="form-group mb-6">
             <label>Name: </label>
-            <input type = "text" id = "name" value = {name}
+            <input type = "text" id = "name" value = {name} max = "49"
             onChange = {(e) => setName(e.target.value)}
             class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <div class="form-group mb-6">
             <label>Founding Date: </label>
-            <input type = "date" id = "founding-date" value = {foundingDate}
+            <input type = "date" id = "founding-date" value = {foundingDate.substring(0,10)}
             onChange = {(e) => setFoundingDate(e.target.value)}
             class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>
           <div class="form-group mb-6">
             <label>City: </label>
-            <input type = "text" id = "city" value = {city}
+            <input type = "text" id = "city" value = {city} max = "49"
             onChange = {(e)=> setCity(e.target.value)}
             class ="form-controll border border-solid border-gray-300"/> <br/>
           </div>

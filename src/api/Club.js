@@ -31,7 +31,7 @@ export async function EditClub(club){
             return response.json();
         })
         .then(json=>{
-            alert(json.playerId + " updated");
+            alert("Club " + json.clubId + " updated");
         })
 }
 
@@ -44,7 +44,6 @@ export async function PostTeam(club){
         },
         body: JSON.stringify(club)
     } 
-    alert(JSON.stringify(club));
     fetch("http://localhost:5101/api/club", init)
         .then(response => {
             if(response.status !== 201){
@@ -56,8 +55,6 @@ export async function PostTeam(club){
         .then(json=>{
             alert ("Successfully added club ID:" + json.clubId);
         })
-        .catch(m => alert(m));
-
 }
 
 export async function GetPlayersByTeam(id, set){
