@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import TopScorerList from './TopScorerList';
+import TopAssistsList from './TopAssistsList';
+import MostCleanSheetsList from './MostCleanSheetsList';
 //import '../styles/history.css'
 
 const SeasonDisplay = ({season}) => {
     const [topStatMode, setTopStatMode] = useState('');
-    const topScorerMode = useState(false)
     return(
         <>
             <tr>
@@ -18,6 +19,8 @@ const SeasonDisplay = ({season}) => {
             </tr>
 
             {topStatMode === "1" && <TopScorerList seasonId={season.seasonId}/>}
+            {topStatMode === "2" && <TopAssistsList seasonId={season.seasonId}/>}
+            {topStatMode === "3" && <MostCleanSheetsList seasonId={season.seasonId}/>}
         </>
     );
 }
