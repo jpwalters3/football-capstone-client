@@ -10,7 +10,6 @@ const ClubSelector = ({docId, label}) => {
 
     useEffect(()=>{
         GetAllClubs(setClubs)
-        console.log(clubs)
     },[])
 
   return (
@@ -18,7 +17,7 @@ const ClubSelector = ({docId, label}) => {
         <label>{label}: </label>
       <select id = {docId}>
           {clubs.map((c) => {
-              return <option key = {c.clubId} value = {c.clubId}>{c.name}</option>
+              return <option value = {c.clubId}>{c.name}</option>
           })}
       </select>
     </div>

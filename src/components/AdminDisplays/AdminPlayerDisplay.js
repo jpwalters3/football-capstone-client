@@ -6,7 +6,7 @@ import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 const AdminPlayerDisplay = ({player}) => {
 
     function clickHandler(){
-        DeletePlayer(player.playerId);
+        if(window.confirm("This change is permanate, are you sure you want to delete?")) DeletePlayer(player.playerId);
     }
     
     return(

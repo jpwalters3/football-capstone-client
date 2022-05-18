@@ -3,20 +3,14 @@ import Header from '../../components/Header'
 import { useState } from 'react'
 import { PostTeam } from '../../api/Club'
 const AddTeam = () => {
-  const [team, setTeam] = useState(
-    {
-      name: "",
-      foundingDate: "1970-01-01",
-      city: ""
-    });
 
   function submitHandler(e){
     e.preventDefault();
-    setTeam({
+    const team = {
       name: document.getElementById('name').value,
       foundingDate: document.getElementById('founding-date').value,
       city: document.getElementById('city').value
-    });
+    };
     PostTeam(team);
   }
   return (

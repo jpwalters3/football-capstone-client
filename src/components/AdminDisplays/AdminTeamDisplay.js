@@ -1,5 +1,6 @@
 import React from 'react'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
+import { DeleteClub } from '../../api/Club';
 import {Link} from 'react-router-dom'
 
 const AdminTeamDisplay = ({club}) => {
@@ -11,7 +12,6 @@ const AdminTeamDisplay = ({club}) => {
       <td>{club.city}</td>
       <td>
           <Link to ={"/Admin/EditClub?id=" + club.clubId}><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
-          <button><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
       </td>
     </tr>
   )

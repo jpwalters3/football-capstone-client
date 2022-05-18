@@ -98,3 +98,21 @@ export async function GetClubData(id, set){
     })
     .then(json => set(json))
 }
+
+export async function DeleteClub(id){
+    const init = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+    }
+
+    fetch("http://localhost:5101/api/club/" + id, init)
+    .then(response => {
+        if(response.status !== 200){
+            alert("error: " + response.status);
+        }
+        else alert("Team " + id + " deleted")
+    })
+}

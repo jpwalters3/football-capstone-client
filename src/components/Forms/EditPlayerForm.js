@@ -1,16 +1,16 @@
 import React from 'react'
 import ClubSelector from '../ClubSelector'
 import { useState, useEffect } from 'react'
-import { GetPlayerData } from '../../api/Player'
 import { EditPlayer } from '../../api/Player'
 
 const EditPlayerForm = ({player}) => {
-    const [toUpdate, setToUpdate] = useState(player);
+
     useEffect(()=>{
       setFirstName(player.firstName);
       setLastName(player.lastName);
       setDob(player.dateOfBirth);
       setIsActive(player.IsActive);
+      document.getElementById('isactive').checked = isActive;
       setClub(player.clubId);
       setPosition(player.positionId);
     }, [player])
@@ -48,10 +48,10 @@ const EditPlayerForm = ({player}) => {
           <label>Date of Birth: </label>
           <input type = "date" id = "bday" value = {dob.substring(0,10)} onChange = {(e)=> setDob(e.target.value)}/> <br/>
           <label>Active: </label>
-          <input type = "checkbox" id = "isactive" value = {isActive} onChange = {(e)=> setIsActive(e.target.value)} checked/> <br/>
+          <input type = "checkbox" id = "isactive" onChange = {(e)=> setIsActive(e.target.checked)} /> <br/>
           <ClubSelector label = "Club" docId = "club"/> <br/>
           <label>Position: </label>
-          <select id = "position" value = {position}>
+          <select id = "position" value = {position} onChange = {(e) => setPosition(e.target.checked)}>
             <option value = {1}>Striker</option>
             <option value = {2}>Midfielder</option>
             <option value = {3}>Defender</option>

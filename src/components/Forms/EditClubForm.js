@@ -22,7 +22,6 @@ const EditClubForm = ({club}) => {
     const [city, setCity] = useState(club.city);
   return (
     <div>
-      <Header/>
       <h3>Edit {club.name}</h3>
       <form onSubmit = {submitHandler}>
           <label>Name: </label>

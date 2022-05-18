@@ -13,7 +13,7 @@ function ViewAllPlayers(){
 
     useEffect(()=> {
         GetAllPlayers(setPlayers);
-    }, [])
+    }, [players])
 
     return(
         <>

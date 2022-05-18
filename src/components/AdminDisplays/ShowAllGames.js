@@ -9,7 +9,8 @@ const ShowAllGames = () => {
     const [matches, setMatches] = useState([{}]);
     useEffect(()=>{
         GetAllGames(setMatches);
-    }, [])
+    }, [matches])
+    
   return (
     <div>
       <Link to = '/Admin/AddGame'><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></Link>

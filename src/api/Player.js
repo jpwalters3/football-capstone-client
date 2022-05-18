@@ -34,7 +34,6 @@ export async function EditPlayer(player){
 
     fetch("http://localhost:5101/api/player", init)
         .then(response=>{
-            alert(JSON.stringify(player));
             if(response.status !== 200){
                 alert("error: " + response.status);
                 return Promise.reject(response.status);
