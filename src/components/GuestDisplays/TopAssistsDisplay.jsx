@@ -7,7 +7,7 @@ const TopAssistsDisplay = ({topAssists}) => {
             <tr>
                 <td className='club'>{topAssists.clubName}</td>
                 <td className='name'>{topAssists.playerName}</td>
-                <td className='assists'>{topAssists.totalAssists}</td>
+                <td className='stat'>{topAssists.totalAssists}</td>
             </tr>
         </>
     );

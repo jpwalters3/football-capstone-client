@@ -7,7 +7,7 @@ const MostCleanSheetsDisplay = ({mostCleanSheets}) => {
             <tr>
                 <td className='club'>{mostCleanSheets.clubName}</td>
                 <td className='name'>{mostCleanSheets.playerName}</td>
-                <td className='cleanSheets'>{mostCleanSheets.totalCleanSheets}</td>
+                <td className='stat'>{mostCleanSheets.totalCleanSheets}</td>
             </tr>
         </>
     );

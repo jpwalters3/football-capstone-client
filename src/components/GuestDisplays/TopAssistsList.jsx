@@ -15,7 +15,7 @@ const TopAssistsList = ({seasonId}) => {
                 <table>
                     <tbody>
                         <tr>
-                            <th className='club'>Club</th><th className='name'>Name</th><th className='assists'>Assists</th>
+                            <th className='club'>Club</th><th className='name'>Name</th><th className='stat'>Assists</th>
                         </tr>
                         {topAssistsList.map(a => <TopAssistsDisplay topAssists = {a}/>)}
                     </tbody>
