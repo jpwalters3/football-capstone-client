@@ -26,12 +26,12 @@ const LoginPrompt = () => {
                     <div class="form-group mb-2">
                         <label>Username: </label>
                         <input type = "text" value = {loginCredentials.userName} onChange = {(u) => {loginCredentialsSetter("userName", u.currentTarget.value)}}
-                                class ="form-controll border border-solid border-gray-300"/> 
+                                class ="form-controll border border-solid border-gray-300" required/> 
                     </div>
                     <div class="form-group mb-5">
                         <label>Password: </label>
                         <input type = "password" value = {loginCredentials.password} onChange = {(p) => {loginCredentialsSetter("password", p.currentTarget.value)}}
-                                class ="form-controll border border-solid border-gray-300"/>
+                                class ="form-controll border border-solid border-gray-300" required/>
                     </div>
                     <div class="form-group">
                         <Link to ="/Home">
@@ -56,9 +56,11 @@ const LoginPrompt = () => {
                     </div>
                 </form>
             </div>
-                    <Link to ="/Home"><button class = {"text-blue-600 hover:text-blue-700 hover:shadow-lg mt-2"} onClick = {()=>GetToken(loginCredentials, setToken, setIsAdmin)}>
+                <Link to ="/Home">
+                    <button class = {"text-blue-600 hover:text-blue-700 hover:shadow-lg mt-2"} onClick = {()=>{setIsAdmin(false); setToken("")}}>
                         Continue As Guest
-                    </button></Link>
+                    </button>
+                </Link>
         </div>
     )
 }
