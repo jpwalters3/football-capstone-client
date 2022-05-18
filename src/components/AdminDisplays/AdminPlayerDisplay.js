@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { DeletePlayer } from '../../api/Player';
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
+import { TokenContext } from '../../App';
 
 const AdminPlayerDisplay = ({player}) => {
+    const [token, setToken] = React.useContext(TokenContext);
 
     function clickHandler(){
-        if(window.confirm("This change is permanate, are you sure you want to delete?")) DeletePlayer(player.playerId);
+        if(window.confirm("This change is permanent, are you sure you want to delete?")) DeletePlayer(player.playerId, token);
     }
     
     return(
