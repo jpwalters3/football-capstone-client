@@ -3,8 +3,6 @@ import '../../styles/Roster.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { GetAllPlayers } from '../../api/Player'
-import { Link } from 'react-router-dom'
-import Button from '../Button'
 import {PlusIcon} from '@heroicons/react/solid'
 import AddPlayer from '../Forms/AddPlayer'
 
@@ -31,7 +29,7 @@ function ViewAllPlayers(){
             <table className = "roster-display">
                 <tbody>
                     <tr>
-                        <th>Id</th><th colSpan="2">player</th><th>DOB</th><th colSpan="2">club</th><th>position</th><th>status</th>
+                        <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th>
                     </tr>
                     {players.map(p => <AdminPlayerDisplay player = {p}/>)}
                 </tbody>

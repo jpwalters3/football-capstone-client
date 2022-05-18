@@ -26,8 +26,8 @@ const PlayerDisplay = ({player}) => {
                 <td>{player.playerId}</td>
                 <td colSpan="2">{player.firstName + " " + player.lastName}</td>
                 <td>{player.dateOfBirth.substring(0,10)}</td>
-                <td colSpan="2">{player.clubId}</td>
-                <td>{player.positionId}</td>
+                <td colSpan="2">{player.clubName}</td>
+                <td>{player.positionName}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
                 <td>
                     <button type="button" onClick = {()=>{setStatMode(!statMode)}}><ChartSquareBarIcon className={`inline h-10 w-10 text-${color}`}/></button>
