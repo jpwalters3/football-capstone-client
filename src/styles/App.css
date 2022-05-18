@@ -3,6 +3,12 @@
   
 }
 body {
-  background-color: #696969;
+  background-color: #f5f5f5;
 }
 
+.player-stats{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(183, 157, 185);
+  width: 350px;
+}

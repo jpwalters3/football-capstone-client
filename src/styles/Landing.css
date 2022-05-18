@@ -1,8 +1,7 @@
 .team-icon{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 50px;
+  border-radius: 2px;
+  padding: 2px;
+  width: 55px;
 }
 
 #team-records{
@@ -20,7 +19,7 @@ table, th, td{
 }
 
 .team-display:hover{
-  background-color: rgb(100, 114, 74);
+  background-color: rgb(221, 216, 221);
 }
 font{
   font-family: Georgia;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { GetAllClubs } from '../api/GetAllClubs'
+import { GetAllClubs } from '../api/Club'
 
 const ClubSelector = ({docId, label}) => {
     const [clubs, setClubs] = useState ([{
@@ -10,15 +10,14 @@ const ClubSelector = ({docId, label}) => {
 
     useEffect(()=>{
         GetAllClubs(setClubs)
-        console.log(clubs)
     },[])
 
   return (
     <div>
         <label>{label}: </label>
-      <select id = {docId}>
+      <select id = {docId} class ="form-controll border border-solid border-gray-300">
           {clubs.map((c) => {
-              return <option key = {c.clubId} value = {c.clubId}>{c.name}</option>
+              return <option value = {c.clubId}>{c.name}</option>
           })}
       </select>
     </div>
