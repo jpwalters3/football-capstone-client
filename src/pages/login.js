@@ -13,7 +13,6 @@ const Login = () => {
       <p>TODO: Login Inputs </p>
       <p>TODO: Login database</p>
       <p>TODO: JWT Authentication</p>
-      <p>TODO: Admin vs Guest gobal state</p>
     </div>
   )
 }

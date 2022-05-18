@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { DeleteGame } from '../../api/DeleteGame'
+import { DeleteGame } from '../../api/Match'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 const AdminMatchDisplay = ({match}) => {
   function clickHandler(){
-      DeleteGame(match.matchId);
-      window.location.reload();
+      if(window.confirm("This change is permanate, are you sure you want to delete?")) DeleteGame(match.matchId);
   }
   return (
     <tr>
@@ -18,7 +17,7 @@ const AdminMatchDisplay = ({match}) => {
         <td>{match.visitingClubId}</td>
         <td>{match.seasonId}</td>
         <td>
-            <button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button>
+            <Link to = {"/Admin/EditGame?id=" + match.matchId}><button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button></Link>
             <button onClick = {clickHandler}><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>
         </td>
 

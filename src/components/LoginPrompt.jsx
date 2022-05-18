@@ -23,7 +23,7 @@ const LoginPrompt = () => {
                 <label>Username: </label>
                 <input type = "text" value = {loginCredentials.userName} onChange = {(u) => {loginCredentialsSetter("userName", u.currentTarget.value)}}/> <br/>
                 <label>Password: </label>
-                <input type = "text" value = {loginCredentials.password} onChange = {(p) => {loginCredentialsSetter("password", p.currentTarget.value)}}/> <br/>
+                <input type = "password" value = {loginCredentials.password} onChange = {(p) => {loginCredentialsSetter("password", p.currentTarget.value)}}/> <br/>
                 <Link to ="/Home"><button onClick = {()=>GetToken(loginCredentials, setToken, setIsAdmin)}>Log In</button></Link>
                 <br/>
                 <Link to ="/Home">Continue As Guest</Link>

@@ -1,8 +1,7 @@
 .team-icon{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 35px;
+  border-radius: 2px;
+  padding: 2px;
+  width: 55px;
 }
 
 #team-records{

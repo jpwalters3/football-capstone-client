@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
-import { GetPlayerData } from '../../api/GetPlayerData'
+import { GetClubData } from '../../api/Club'
 import EditClubForm from '../../components/Forms/EditClubForm'
 
 const EditClub = () => {
@@ -14,7 +14,7 @@ const EditClub = () => {
   });
 
   useEffect(()=>{
-    GetPlayerData(urlparams.get('id'), setClub)
+    GetClubData(urlparams.get('id'), setClub)
   }, [])
 
     let urlparams = new URLSearchParams(window.location.search)

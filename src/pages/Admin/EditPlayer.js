@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import EditPlayerForm from '../../components/Forms/EditPlayerForm'
-import { GetPlayerData } from '../../api/GetPlayerData'
+import { GetPlayerData } from '../../api/Player'
 
 const EditPlayer = () => {
 

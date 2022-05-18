@@ -1,16 +1,17 @@
 import React from 'react'
 import ClubSelector from '../ClubSelector'
 import { useState, useEffect } from 'react'
-import { GetPlayerData } from '../../api/GetPlayerData'
-import { EditPlayer } from '../../api/EditPlayer'
+import { EditPlayer } from '../../api/Player'
+import '../../styles/Form.css'
 
 const EditPlayerForm = ({player}) => {
-    const [toUpdate, setToUpdate] = useState(player);
+
     useEffect(()=>{
       setFirstName(player.firstName);
       setLastName(player.lastName);
       setDob(player.dateOfBirth);
       setIsActive(player.IsActive);
+      document.getElementById('isactive').checked = isActive;
       setClub(player.clubId);
       setPosition(player.positionId);
     }, [player])
@@ -39,26 +40,62 @@ const EditPlayerForm = ({player}) => {
 
     <div>
         <h3>Edit {player.firstName + " " + player.lastName}</h3>
- 
-        <form onSubmit = {submitHandler}>
-          <label>First Name: </label>
-          <input type = "text" id = "first-name" value = {firstName} onChange = {(e) => setFirstName(e.target.value)}/> <br/>
-          <label>Last Name: </label>
-          <input type = "text" id = "last-name" value = {lastName} onChange = {(e) => setLastName(e.target.value)}/> <br/>
-          <label>Date of Birth: </label>
-          <input type = "date" id = "bday" value = {dob.substring(0,10)} onChange = {(e)=> setDob(e.target.value)}/> <br/>
-          <label>Active: </label>
-          <input type = "checkbox" id = "isactive" value = {isActive} onChange = {(e)=> setIsActive(e.target.value)} checked/> <br/>
-          <ClubSelector label = "Club" docId = "club"/> <br/>
-          <label>Position: </label>
-          <select id = "position" value = {position}>
-            <option value = {1}>Striker</option>
-            <option value = {2}>Midfielder</option>
-            <option value = {3}>Defender</option>
-            <option value = {4}>Goalie</option>
-          </select>
-          <input type = "submit" value = "Update" />
-        </form>
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = 'update-player'>
+          <form onSubmit = {submitHandler}>
+            <div class="form-group mb-6">
+              <label>First Name: </label>
+              <input type = "text" id = "first-name" value = {firstName}
+              onChange = {(e) => setFirstName(e.target.value)}
+              class ="form-controll border border-solid border-gray-300"/> <br/>
+            </div>
+            <div class="form-group mb-6">
+              <label>Last Name: </label>
+              <input type = "text" id = "last-name" value = {lastName}
+              onChange = {(e) => setLastName(e.target.value)}
+              class ="form-controll border border-solid border-gray-300"/> <br/>
+            </div>
+            <div class="form-group mb-6">
+              <label>Date of Birth: </label>
+              <input type = "date" id = "bday" value = {dob.substring(0,10)}
+              onChange = {(e)=> setDob(e.target.value)}
+              class ="form-controll border border-solid border-gray-300"/> <br/>
+            </div>
+            <div class="form-group mb-6">
+              <label>Active </label>
+              <input type = "checkbox" id = "isactive"
+              onChange = {(e)=> setIsActive(e.target.checked)} /> <br/>
+            </div>
+            <ClubSelector label = "Club" docId = "club"/> <br/>
+            <div class="form-group mb-6">
+              <label>Position: </label>
+              <select id = "position" value = {position}
+              onChange = {(e) => setPosition(e.target.checked)}
+              class ="form-controll border border-solid border-gray-300">
+                <option value = {1}>Striker</option>
+                <option value = {2}>Midfielder</option>
+                <option value = {3}>Defender</option>
+                <option value = {4}>Goalie</option>
+              </select>
+            </div>
+            <button type="submit" class="
+              px-6
+              py-2.5
+              bg-blue-600
+              text-white
+              font-medium
+              text-xs
+              leading-tight
+              uppercase
+              rounded
+              shadow-md
+              hover:bg-blue-700 hover:shadow-lg
+              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+              active:bg-blue-800 active:shadow-lg
+              transition
+              duration-150
+              ease-in-out">Add</button>
+          </form>
+        </div>
     </div>
   )
 }
