@@ -29,6 +29,9 @@ const ShowAllGames = () => {
         {show && <AddGame />}
       <table>
           <tbody>
+          <tr>
+              <th>Id</th><th>Date</th><th>Home Score</th><th>Away Score</th><th>Home Id</th><th>Away Id</th><th>Season Id</th>
+          </tr>
               {matches.map( (m) => <AdminMatchDisplay match = {m}/>)}
           </tbody>
       </table>
