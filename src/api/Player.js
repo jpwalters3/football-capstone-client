@@ -1,16 +1,21 @@
-export async function PostPlayer(player){
+export async function PostPlayer(player, token){
     const init = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(player)
     }
     
     fetch("http://localhost:5101/api/player", init)
         .then(response => {
-            if(response.status !== 201){
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nPlayer not made. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 201){
                 alert ("Error " + response.status);
                 return Promise.reject(response.status);
             }
@@ -22,19 +27,24 @@ export async function PostPlayer(player){
 
 }
 
-export async function EditPlayer(player){
+export async function EditPlayer(player, token){
     const init = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(player)
     };
 
     fetch("http://localhost:5101/api/player", init)
         .then(response=>{
-            if(response.status !== 200){
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nEdit unsuccessful. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 200){
                 alert("error: " + response.status);
                 return Promise.reject(response.status);
             }
@@ -45,18 +55,23 @@ export async function EditPlayer(player){
         })
 }
 
-export async function DeletePlayer(id){
+export async function DeletePlayer(id, token){
     const init = {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         }
     }
 
     fetch("http://localhost:5101/api/player/" + id, init)
     .then(response => {
-        if(response.status !== 200){
+        if(response.status == 401){
+            alert(`Error ${response.status}: ${response.statusText}\nDelete unsuccessful. Must be logged in as Admin to perform this task.`);
+            return Promise.reject(response.status);
+        }
+        else if(response.status !== 200){
             alert("error: " + response.status);
         }
         else alert("player " + id + " deleted")

@@ -3,8 +3,11 @@ import Header from '../../components/Header'
 import { useState, useEffect } from 'react'
 import { GetGameData } from '../../api/Match' 
 import EditMatchForm from '../../components/Forms/EditMatchForm'
+import { AdminContext } from '../../App';
+import Unauthorized from '../Unauthorized';
 
 const EditGame = () => {
+  const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
 
   let urlparams = new URLSearchParams(window.location.search)
 
@@ -24,11 +27,19 @@ const EditGame = () => {
   },[])
 
   return (
-    <div>
-      <Header/>
-      <h3>Update Game {game.matchId}</h3>
-      <EditMatchForm match = {game}/>
-    </div>
+    <>
+      {isAdmin ?
+        <div>
+          <Header/>
+          <h3>Update Game {game.matchId}</h3>
+          <EditMatchForm match = {game}/>
+        </div>
+      :
+        <Unauthorized/>
+      }
+    </>
+
+    
   )
 }
 
