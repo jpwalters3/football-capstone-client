@@ -10,12 +10,12 @@ const AdminMatchDisplay = ({match}) => {
   return (
     <tr>
         <td>{match.matchId}</td>
-        <td>{match.matchDate}</td>
+        <td>{match.matchDate.substring(0,10)}</td>
+        <td>{match.homeClubName}</td>
         <td>{match.homeScore}</td>
         <td>{match.awayScore}</td>
-        <td>{match.homeClubId}</td>
-        <td>{match.visitingClubId}</td>
-        <td>{match.seasonId}</td>
+        <td>{match.visitingClubName}</td>
+        <td>{match.seasonYear}</td>
         <td>
             <Link to = {"/Admin/EditGame?id=" + match.matchId}><button><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></button></Link>
             <button onClick = {clickHandler}><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>

@@ -8,7 +8,7 @@ const AdminTeamDisplay = ({club}) => {
     <tr>
       <td>{club.clubId}</td>
       <td>{club.name}</td>
-      <td>{club.foundingDate}</td>
+      <td>{club.foundingDate.substring(0,10)}</td>
       <td>{club.city}</td>
       <td>
           <Link to ={"/Admin/EditClub?id=" + club.clubId}><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
