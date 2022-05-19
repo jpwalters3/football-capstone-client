@@ -35,7 +35,7 @@ function ViewAllPlayers(){
             <br/>
 
             {show && <AddPlayer />}
-            <table className = "roster-display" class="w-11/12 text-sm text-left text-gray-500 dark:text-gray-400 ml-20">
+            <table className = "roster-display" class="w-11/12 text-sm text-left text-gray-500 dark:text-gray-400 ml-20 mt-4">
                 <tbody>
                     <tr>
                         <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan = "2">Club</th><th>Position</th><th>Status</th>

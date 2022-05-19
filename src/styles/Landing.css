@@ -15,11 +15,11 @@ table, th, td{
 }
 
 .team-display{
-  background-color: rgb(183, 157, 185);
+  background-color: rgb(205, 150, 209);
 }
 
 .team-display:hover{
-  background-color: rgb(221, 216, 221);
+  background-color: rgb(209, 166, 211);
 }
 font{
   font-family: Georgia;

@@ -22,6 +22,7 @@ const LoginPrompt = () => {
 
     return(
         <div>
+            <h3 class="text-3xl text-indigo-50">Welcome</h3><br/>
             <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id ="update-club">
                 <form>
                     <div class="form-group mb-2">
@@ -55,13 +56,14 @@ const LoginPrompt = () => {
                                 ease-in-out">Log In</button>
                         </Link>
                     </div>
-                </form>
-            </div>
-                <Link to ="/Home">
+                    <Link to ="/Home">
                     <button class = {"text-blue-600 hover:text-blue-700 hover:shadow-lg mt-2"} onClick = {()=>{setIsAdmin(false); setToken("")}}>
                         Continue As Guest
                     </button>
-                </Link>
+                    </Link>
+                </form>
+            </div>
+
         </div>
     )
 }

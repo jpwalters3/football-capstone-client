@@ -9,7 +9,7 @@ const Statistics = () => {
         GetSeasonRecords(setSeasons)
     }, [])
   return (
-    <div>
+    <div class = "md-32">
         <Header />
         <h1 className = "text-center text-xl font-serif text-fuchshia-650">Season Statistics Table</h1>
       <table id = "season-records">

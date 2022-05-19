@@ -28,3 +28,9 @@ table {
 .edit-performance-input{
   width: 35px;
 }
+
+.login-animate{
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}

@@ -14,7 +14,8 @@ const Landing = () => {
   return (
     <>
     <Header />
-    <h1 className = "text-center text-xl font-serif text-fuchshia-650">League Table</h1>
+    <h1 className = "text-center text-3xl font-sans text-indigo-900 mb-4">League Records</h1>
+    <div class = 'mb-36'>
     <table id = "team-records">
         <tbody>
             <tr>
@@ -23,6 +24,7 @@ const Landing = () => {
             {clubs.map(team => <TeamDisplay club = {team}/>)}
         </tbody>
     </table>
+    </div>
     </>
   )
 }

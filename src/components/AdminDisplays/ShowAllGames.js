@@ -34,7 +34,7 @@ const ShowAllGames = () => {
         Add Game
       </button>
         {show && <AddGame />}
-      <table class="w-11/12 text-sm text-left text-gray-500 dark:text-gray-400 ml-20">
+      <table class="w-11/12 text-sm text-left text-gray-500 dark:text-gray-400 ml-20 mt-4">
           <tbody>
             <tr>
               <th>ID</th><th>Date</th><th>Home Club</th><th>Home Score</th><th>Away Score</th><th>Away Club</th><th>Season</th>
