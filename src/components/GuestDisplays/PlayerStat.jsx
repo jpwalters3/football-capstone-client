@@ -18,7 +18,7 @@ const PlayerStat = ({playerId}) => {
             <tr><td>Shots:</td><td> {playerData.shots}</td> </tr>
             <tr><td>On Target: </td><td>{playerData.shotsOnTarget}</td></tr>
             <tr><td>Goals: </td><td>{playerData.goals}</td></tr>
-            <tr><td>Assits: </td><td>{playerData.assists}</td></tr>
+            <tr><td>Assists: </td><td>{playerData.assists}</td></tr>
             <tr><td>Saves: </td><td>{playerData.saves}</td></tr>
             <tr><td>Fouls: </td><td>{playerData.fouls}</td></tr>
             </tbody>
