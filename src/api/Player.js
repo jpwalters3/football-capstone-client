@@ -54,7 +54,7 @@ export async function EditPlayer(player, token){
             return response.json();
         })
         .then(json=>{
-            alert(json.playerId + " updated");
+            alert("player " + player.playerId + " updated");
         })
 }
 

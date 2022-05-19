@@ -22,9 +22,17 @@ const ShowAllGames = () => {
 
   return (
     <div>
-      <div onClick = {addClickHandler}>
-        <PlusIcon className={"inline h-10 w-10 text-purple-500"}/>
-      </div>
+      <br/>
+      <button onClick = {addClickHandler}
+      class="bg-indigo-500 
+      hover:bg-indigo-700 
+      text-white 
+      font-bold 
+      py-1 
+      px-2
+      rounded-full">
+        Add Game
+      </button>
         {show && <AddGame />}
       <table>
           <tbody>
