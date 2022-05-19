@@ -33,7 +33,7 @@ const ShowAllTeams = () => {
       rounded-full">Add Team</button>
 
       {show && <AddTeam/>}
-      <table>
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <tbody>
           <tr>
             <th>ID</th><th>Name</th><th>Founding Date</th><th>City</th>
