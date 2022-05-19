@@ -16,13 +16,16 @@ export async function PostPlayer(player, token){
                 return Promise.reject(response.status);
             }
             else if(response.status !== 201){
-                alert ("Error " + response.status);
-                return Promise.reject(response.status);
+                alert (`Error ${response.status}: ${response.statusText}\nPlayer not made.`);
+                return Promise.reject(response.body);
             }
             return response.json();
         })
         .then(json=>{
             alert ("Successfully added new player " + json.playerId);
+        })
+        .catch(error => {
+            console.log(error)
         })
 
 }
@@ -45,7 +48,7 @@ export async function EditPlayer(player, token){
                 return Promise.reject(response.status);
             }
             else if(response.status !== 200){
-                alert("error: " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -72,7 +75,7 @@ export async function DeletePlayer(id, token){
             return Promise.reject(response.status);
         }
         else if(response.status !== 200){
-            alert("error: " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
         }
         else alert("player " + id + " deleted")
     })
@@ -82,7 +85,7 @@ export async function GetAllPlayers(set){
     fetch("http://localhost:5101/api/player")
     .then(response => {
         if(response.status !== 200){
-            alert("Error: status " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject("error");
         }
         return response.json();
@@ -97,7 +100,7 @@ export async function GetPlayerData(id, set){
     await fetch(url)
     .then(response => {
         if(response.status != 200){
-            alert("error " + response.status + ": " + response.body);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject(response.status);
         }
         return response.json();
@@ -109,7 +112,7 @@ export async function GetPlayerStats(id, set){
     fetch("http://localhost:5101/api/reports/" + id)
         .then(response => {
             if(response.status !== 200){
-                alert("Error: status " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject("error");
             }
             return response.json();

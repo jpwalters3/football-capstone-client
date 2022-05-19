@@ -2,7 +2,7 @@ export async function GetAllGames(set){
     fetch("http://localhost:5101/api/match")
     .then(response =>{
         if(response.status !== 200){
-            alert("error" + response.status + ": " + response.body)
+            alert(`Error ${response.status}: ${response.statusText}`)
             return Promise.reject(response.status);
         }
         return response.json();
@@ -16,7 +16,7 @@ export async function GetGameData(set, id){
     fetch("http://localhost:5101/api/match/" + id)
     .then(response =>{
         if(response.status !== 200){
-            alert("error" + response.status + ": " + response.body)
+            alert(`Error ${response.status}: ${response.statusText}`)
             return Promise.reject(response.status);
         }
         return response.json();
@@ -43,7 +43,7 @@ export async function DeleteGame(id, token){
             return Promise.reject(response.status);
         }
         else if(response.status !== 200){
-            alert("error: " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
         }
         else alert("Game " + id + " deleted")
     })
@@ -68,7 +68,7 @@ export async function PostGame(match, token){
                 return Promise.reject(response.status);
             }
             else if(response.status != 201){
-                alert ("Error: " + response.status)
+                alert (`Error ${response.status}: ${response.statusText}`)
                 return Promise.reject(response.status)
             }
             return response.json();
@@ -83,7 +83,7 @@ export async function GetClubSchedule(id,set){
     .then(response =>
         {
             if (response.status !== 200){
-                alert ("error: " + response.status);
+                alert (`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -111,7 +111,7 @@ export async function EditMatch(match, token){
                 return Promise.reject(response.status);
             }
             else if(response.status !== 200){
-                alert("error: " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();

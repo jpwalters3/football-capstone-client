@@ -2,7 +2,7 @@ export async function GetAllClubs(set){
     fetch("http://localhost:5101/api/club")
     .then(response => {
         if(response.status !== 200){
-            alert("Error: status " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject("error");
         }
         return response.json();
@@ -31,7 +31,7 @@ export async function EditClub(club, token){
             }
             else if(response.status !== 200){
                 
-                alert("error: " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -58,7 +58,7 @@ export async function PostTeam(club, token){
                 return Promise.reject(response.status);
             }
             else if(response.status !== 201){
-                alert ("Error " + response.status);
+                alert (`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.body);
             }
             return response.json();
@@ -72,7 +72,7 @@ export async function GetPlayersByTeam(id, set){
     fetch("http://localhost:5101/api/club/" + id + "/player")
         .then(response => {
             if(response.status != 200){
-                alert("error: " + response.statusText);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -84,7 +84,7 @@ export async function GetClubRecords(set){
     fetch("http://localhost:5101/api/reports/clubs")
         .then(response => {
             if(response.status !== 200){
-                alert("Error: status " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject("error");
             }
             return response.json();
@@ -99,7 +99,7 @@ export async function GetClubData(id, set){
     await fetch(url)
     .then(response => {
         if(response.status != 200){
-            alert("error " + response.status + ": " + response.body);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject(response.status);
         }
         return response.json();
@@ -124,7 +124,7 @@ export async function DeleteClub(id, token){
             return Promise.reject(response.status);
         }
         else if(response.status !== 200){
-            alert("error: " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
         }
         else alert("Team " + id + " deleted")
     })
