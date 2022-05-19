@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import TopScorerList from './TopScorerList';
 import TopAssistsList from './TopAssistsList';
 import MostCleanSheetsList from './MostCleanSheetsList';
-//import '../styles/history.css'
+import '../../styles/Season.css'
 
 const SeasonDisplay = ({season}) => {
     const [topStatMode, setTopStatMode] = useState('');

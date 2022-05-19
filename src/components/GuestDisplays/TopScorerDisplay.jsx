@@ -7,7 +7,7 @@ const TopScorerDisplay = ({topScorer}) => {
             <tr>
                 <td className='club'>{topScorer.clubName}</td>
                 <td className='name'>{topScorer.playerName}</td>
-                <td className='goals'>{topScorer.totalGoals}</td>
+                <td className='stat'>{topScorer.totalGoals}</td>
             </tr>
         </>
     );

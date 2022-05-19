@@ -2,8 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { PostTeam } from '../../api/Club'
 import '../../styles/Form.css'
+import { TokenContext } from '../../App';
 const AddTeam = () => {
-  let today = new Date();
+  const [token, setToken] = React.useContext(TokenContext);
+
   function submitHandler(e){
     e.preventDefault();
     const team = {
@@ -11,7 +13,7 @@ const AddTeam = () => {
       foundingDate: document.getElementById('founding-date').value,
       city: document.getElementById('city').value
     };
-    PostTeam(team);
+    PostTeam(team,token);
   }
   return (
     <div>

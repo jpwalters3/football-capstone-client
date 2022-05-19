@@ -3,8 +3,10 @@ import ClubSelector from '../ClubSelector'
 import { useState, useEffect } from 'react'
 import { EditPlayer } from '../../api/Player'
 import '../../styles/Form.css'
+import { TokenContext } from '../../App';
 
 const EditPlayerForm = ({player}) => {
+    const [token, setToken] = React.useContext(TokenContext);
 
     useEffect(()=>{
       setFirstName(player.firstName);
@@ -32,7 +34,7 @@ const EditPlayerForm = ({player}) => {
       player.clubId = document.getElementById('club').value;
       player.isActive = document.getElementById('isactive').checked;
       player.positionId = document.getElementById('position').value;
-      EditPlayer(player);
+      EditPlayer(player,token);
     }
 
 

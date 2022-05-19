@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import EditPlayerForm from '../../components/Forms/EditPlayerForm'
 import { GetPlayerData } from '../../api/Player'
+import { AdminContext } from '../../App';
+import Unauthorized from '../Unauthorized';
 
 const EditPlayer = () => {
+  const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
 
   const [player, setPlayer] = 
   useState({
@@ -23,11 +26,15 @@ const EditPlayer = () => {
 
     let urlparams = new URLSearchParams(window.location.search)
   return (
-    <div>
-        <Header />
-
-      <EditPlayerForm player = {player}/>
-    </div>
+    <>
+      {isAdmin ? 
+        <div>
+          <Header />
+          <EditPlayerForm player = {player}/>
+        </div>
+      :
+        <Unauthorized/>}
+    </>
   )
 }
 

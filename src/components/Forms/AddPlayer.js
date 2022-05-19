@@ -3,8 +3,11 @@ import Header from '../Header'
 import ClubSelector from '../ClubSelector'
 import { PostPlayer } from '../../api/Player'
 import '../../styles/Form.css'
+import { TokenContext } from '../../App';
 
 const AddPlayer = () => {
+  const [token, setToken] = React.useContext(TokenContext);
+
   function FormSubmit(e){
 
     e.preventDefault();
@@ -18,7 +21,7 @@ const AddPlayer = () => {
         isActive: document.getElementById('active').checked
       }
 
-      PostPlayer(player);
+      PostPlayer(player, token);
   }
   
   return (

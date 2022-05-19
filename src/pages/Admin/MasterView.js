@@ -4,6 +4,7 @@ import DisplayBar from '../../components/AdminDisplays/DisplayBar'
 import Header from '../../components/Header'
 import { AdminContext } from '../../App';
 import { Link }from 'react-router-dom'
+import Unauthorized from '../Unauthorized';
 
 const MasterView = () => {
   const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
@@ -16,11 +17,7 @@ const MasterView = () => {
         <DisplayBar />
         </div>
       : 
-        <div>
-          Not Authorized
-          <br/>
-          <Link to = "/">Return to Login</Link>
-        </div>}
+        <Unauthorized/>}
     </>
   )
 }

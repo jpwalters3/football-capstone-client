@@ -3,8 +3,11 @@ import { useEffect, useState } from 'react'
 import ClubSelector from '../ClubSelector';
 import { EditMatch } from '../../api/Match';
 import "../../styles/Form.css"
+import { TokenContext } from '../../App';
 
 const EditMatchForm = ({match}) => {
+
+    const [token, setToken] = React.useContext(TokenContext);
 
     function submitHandler(e){
         e.preventDefault();
@@ -15,7 +18,7 @@ const EditMatchForm = ({match}) => {
         match.seasonId = 4;
         match.homeScore = homeScore;
         match.awayScore = awayScore;
-        EditMatch(match)
+        EditMatch(match,token)
     }
 
     const [homeTeam, setHomeTeam] = useState(match.homeClubId);

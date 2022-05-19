@@ -2,7 +2,7 @@ export async function GetAllClubs(set){
     fetch("http://localhost:5101/api/club")
     .then(response => {
         if(response.status !== 200){
-            alert("Error: status " + response.status);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject("error");
         }
         return response.json();
@@ -12,20 +12,26 @@ export async function GetAllClubs(set){
     })
 }
 
-export async function EditClub(club){
+export async function EditClub(club, token){
     const init = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(club)
     };
 
     fetch("http://localhost:5101/api/club", init)
         .then(response=>{
-            if(response.status !== 200){
-                alert("error: " + response.status);
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nEdit unsuccessful. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 200){
+                
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -35,19 +41,24 @@ export async function EditClub(club){
         })
 }
 
-export async function PostTeam(club){
+export async function PostTeam(club, token){
     const init = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(club)
     } 
     fetch("http://localhost:5101/api/club", init)
         .then(response => {
-            if(response.status !== 201){
-                alert ("Error " + response.status);
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nTeam not made. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 201){
+                alert (`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.body);
             }
             return response.json();
@@ -61,7 +72,7 @@ export async function GetPlayersByTeam(id, set){
     fetch("http://localhost:5101/api/club/" + id + "/player")
         .then(response => {
             if(response.status != 200){
-                alert("error: " + response.statusText);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject(response.status);
             }
             return response.json();
@@ -73,7 +84,7 @@ export async function GetClubRecords(set){
     fetch("http://localhost:5101/api/reports/clubs")
         .then(response => {
             if(response.status !== 200){
-                alert("Error: status " + response.status);
+                alert(`Error ${response.status}: ${response.statusText}`);
                 return Promise.reject("error");
             }
             return response.json();
@@ -88,7 +99,7 @@ export async function GetClubData(id, set){
     await fetch(url)
     .then(response => {
         if(response.status != 200){
-            alert("error " + response.status + ": " + response.body);
+            alert(`Error ${response.status}: ${response.statusText}`);
             return Promise.reject(response.status);
         }
         return response.json();
@@ -96,19 +107,24 @@ export async function GetClubData(id, set){
     .then(json => set(json))
 }
 
-export async function DeleteClub(id){
+export async function DeleteClub(id, token){
     const init = {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
         }
     }
 
     fetch("http://localhost:5101/api/club/" + id, init)
     .then(response => {
-        if(response.status !== 200){
-            alert("error: " + response.status);
+        if(response.status == 401){
+            alert(`Error ${response.status}: ${response.statusText}\nDelete unsuccessful. Must be logged in as Admin to perform this task.`);
+            return Promise.reject(response.status);
+        }
+        else if(response.status !== 200){
+            alert(`Error ${response.status}: ${response.statusText}`);
         }
         else alert("Team " + id + " deleted")
     })
