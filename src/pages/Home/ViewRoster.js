@@ -3,13 +3,16 @@ import Header from '../../components/Header'
 import ClubRoster from '../../components/GuestDisplays/ClubRoster'
 
 const ViewRoster = () => {
-    let urlparams = new URLSearchParams(window.location.search)
+    const urlparams = new URLSearchParams(window.location.search)
+    const id = urlparams.get('id')
+
   return (
     <div>
         <Header />
-        <h3 className = "font-serif text-2xl mb-5 mt-15">Team {urlparams.get('id')} Roster Display</h3>
+          {id < 5 && <img src = {require('../../img/club-' + id + '-logo.png')} width = '200'/>}
+          {id > 4 && <img src = {require('../../img/club-0-logo.png')} width = '200'/>}
+        <h1 class ="text-2xl">ROSTER</h1> <br/><br/>
         <ClubRoster id = {urlparams.get('id')} />
-        <p>TODO: Roster Should only show active players</p>
     </div>
   )
 }

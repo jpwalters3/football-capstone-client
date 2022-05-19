@@ -42,8 +42,8 @@ const EditMatchForm = ({match}) => {
   return (
     <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "update-match">
         <form onSubmit = {submitHandler}>
-            <ClubSelector docId = 'home-team' label = 'Home Team'/>
-            <ClubSelector docId = 'away-team' label = 'Away Team'/>
+            <ClubSelector docId = 'home-team' label = 'Home Team' start = {match.homeClubId}/>
+            <ClubSelector docId = 'away-team' label = 'Away Team' start = {match.visitingClubId}/>
             <div class="form-group mb-6">
                 <label>Date: </label>
                 <input type = "date" id = "match-date" value = {matchDate.substring(0,10)}

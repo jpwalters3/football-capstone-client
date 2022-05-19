@@ -23,7 +23,6 @@ const Landing = () => {
             {clubs.map(team => <TeamDisplay club = {team}/>)}
         </tbody>
     </table>
-    <p>TODO: records should only be for the current season</p>
     </>
   )
 }

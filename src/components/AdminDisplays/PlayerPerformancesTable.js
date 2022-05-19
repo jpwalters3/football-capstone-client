@@ -22,7 +22,9 @@ const PlayerPerformancesTable = ({player}) => {
     <div>
         <table>
             <thead>
+                <tr>
                 <th colSpan = "2">Games Played</th>
+                </tr>
             </thead>
             <tbody className = "admin-performance-table">
                 {games.map((g) => 

@@ -3,7 +3,6 @@ import '../../styles/Roster.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { GetAllPlayers } from '../../api/Player'
-import {PlusIcon} from '@heroicons/react/solid'
 import AddPlayer from '../Forms/AddPlayer'
 
 function ViewAllPlayers(){
@@ -24,12 +23,22 @@ function ViewAllPlayers(){
 
     return(
         <>
-            <div onClick = {addClickHandler}><PlusIcon className={"inline h-10 w-10 text-purple-500"}/></div>
+            <br/>
+            <button onClick = {addClickHandler}
+            class="bg-indigo-500 
+            hover:bg-indigo-700 
+            text-white 
+            font-bold 
+            py-1 
+            px-2
+            rounded-full">Add Player</button>
+            <br/>
+
             {show && <AddPlayer />}
             <table className = "roster-display">
                 <tbody>
                     <tr>
-                        <th>Id</th><th colSpan="2">Player</th><th colSpan="3">DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th><th>Club Id</th><th>Position Id</th>
+                        <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan = "2">Club</th><th>Position</th><th>Status</th>
                     </tr>
                     {players.map(p => <AdminPlayerDisplay player = {p}/>)}
                 </tbody>

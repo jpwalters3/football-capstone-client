@@ -6,6 +6,7 @@ import '../../styles/Form.css'
 import { TokenContext } from '../../App';
 
 const EditPlayerForm = ({player}) => {
+
     const [token, setToken] = React.useContext(TokenContext);
 
     useEffect(()=>{
@@ -13,8 +14,6 @@ const EditPlayerForm = ({player}) => {
       setLastName(player.lastName);
       setDob(player.dateOfBirth);
       setIsActive(player.IsActive);
-      document.getElementById('isactive').checked = isActive;
-      setClub(player.clubId);
       setPosition(player.positionId);
     }, [player])
 
@@ -23,7 +22,6 @@ const EditPlayerForm = ({player}) => {
     const [lastName, setLastName] = useState(player.lastName)
     const [dob, setDob]  = useState(player.dateOfBirth);
     const [isActive, setIsActive] = useState(player.isActive);
-    const [club, setClub] = useState(player.clubId);
     const [position, setPosition] = useState(player.positionId);
 
     function submitHandler(e){
@@ -31,7 +29,6 @@ const EditPlayerForm = ({player}) => {
       player.firstName = document.getElementById('first-name').value;
       player.lastName = document.getElementById('last-name').value;
       player.dateOfBirth = document.getElementById('bday').value;
-      player.clubId = document.getElementById('club').value;
       player.isActive = document.getElementById('isactive').checked;
       player.positionId = document.getElementById('position').value;
       EditPlayer(player,token);
@@ -63,10 +60,9 @@ const EditPlayerForm = ({player}) => {
             </div>
             <div class="form-group mb-6">
               <label>Active </label>
-              <input type = "checkbox" id = "isactive"
+              <input type = "checkbox" id = "isactive" checked = {isActive}
               onChange = {(e)=> setIsActive(e.target.checked)} /> <br/>
             </div>
-            <ClubSelector label = "Club" docId = "club"/> <br/>
             <div class="form-group mb-6">
               <label>Position: </label>
               <select id = "position" value = {position}

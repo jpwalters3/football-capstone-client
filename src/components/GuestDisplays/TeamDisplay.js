@@ -4,7 +4,7 @@ import {CalendarIcon, ClipboardIcon} from '@heroicons/react/solid'
 
 const TeamDisplay = ({club}) => {
   var imgId;
-  if (club.clubId > 3) imgId = 0;
+  if (club.clubId > 4) imgId = 0;
   else imgId = club.clubId;
 
   return (

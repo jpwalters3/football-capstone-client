@@ -20,8 +20,6 @@ const AdminPlayerDisplay = ({player}) => {
                 <td colSpan="2">{player.clubName}</td>
                 <td>{player.positionName}</td>
                 {player.isActive?<td>Active</td>:<td>Retired</td>}
-                <td>{player.clubId}</td>
-                <td>{player.positionId}</td>
                 <td>
                     <Link to = {"/Admin/EditPlayer?id=" + player.playerId}><PencilAltIcon className={"inline h-10 w-10 text-purple-500"}/></Link>
                     <button onClick = {clickHandler}><TrashIcon className={"inline h-10 w-10 text-purple-500"}/></button>

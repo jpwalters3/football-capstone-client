@@ -17,7 +17,6 @@ const AddTeam = () => {
   }
   return (
     <div>
-        <p>STRETCH: user image upload</p>
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "new-club">
         <form onSubmit = {submitHandler}>
           <div class="form-group mb-6">

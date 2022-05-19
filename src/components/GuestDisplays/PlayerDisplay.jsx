@@ -23,7 +23,7 @@ const PlayerDisplay = ({player}) => {
     return(
         <>
             <tr>
-                <td>{player.playerId}</td>
+                
                 <td colSpan="2">{player.firstName + " " + player.lastName}</td>
                 <td>{player.dateOfBirth.substring(0,10)}</td>
                 <td colSpan="2">{player.clubName}</td>

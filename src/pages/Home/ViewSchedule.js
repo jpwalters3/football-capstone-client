@@ -7,7 +7,9 @@ const ViewSchedule = () => {
   return (
     <div>
       <Header />
-      <h3> Team {urlparams.get('id')} Schedule</h3><br/>
+      {urlparams.get('id') < 5 && <img src = {require('../../img/club-' + urlparams.get('id') + '-logo.png')} width = '200'/>}
+      {urlparams.get('id') > 4 && <img src = {require('../../img/club-0-logo.png')} width = '200'/>}
+      <h1 class = "text-2xl">SCHEDULE</h1><br/>
       <ViewClubSchedule id = {urlparams.get('id')}/>
     </div>
   )

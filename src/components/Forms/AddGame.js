@@ -23,6 +23,12 @@ const AddGame = () => {
       visitingClubId: document.getElementById('away-team').value,
       seasonId: 1
     }
+
+    if (game.homeClubId === game.awayClubId){
+      alert("warning: home club and away club cannot be the same");
+      return;
+    }
+
     PostGame(game,token);
   }
   return (
@@ -30,10 +36,10 @@ const AddGame = () => {
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = "new-match">
         <form onSubmit={FormSubmit}>
           <div class="form-group mb-6">
-            <ClubSelector docId = 'home-team' label = 'Home Team'/>
+            <ClubSelector docId = 'home-team' label = 'Home Team' start = {1}/>
           </div>
           <div class="form-group mb-6">
-            <ClubSelector docId = 'away-team' label = 'Away Team'/>
+            <ClubSelector docId = 'away-team' label = 'Away Team' start = {2}/>
           </div>
           <div class="form-group mb-6">
             <label>Date: </label>

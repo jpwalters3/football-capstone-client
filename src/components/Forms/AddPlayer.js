@@ -53,7 +53,7 @@ const AddPlayer = () => {
               </select> <br/>
             </div>
             <div class="form-group mb-6">
-              <ClubSelector docId = 'club' label = 'Team'/>
+              <ClubSelector docId = 'club' label = 'Team' start = {1}/>
             </div>
             <div class="form-group mb-6">
               <label>Active: </label>

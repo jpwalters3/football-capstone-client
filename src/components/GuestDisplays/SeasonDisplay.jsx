@@ -12,6 +12,7 @@ const SeasonDisplay = ({season}) => {
                 <td className='year'>{season.year}</td>
                 <td className='entry'>
                 <select onChange={(e) => setTopStatMode(e.target.value)}>
+        <option value = "0">Select a statistical category</option>
         <option value = "1">Goals</option>
         <option value = "2">Assists</option>
         <option value = "3">Clean Sheets</option>
