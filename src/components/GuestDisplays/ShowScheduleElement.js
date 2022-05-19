@@ -6,8 +6,9 @@ const ShowScheduleElement = ({match, teamId}) => {
         <td>{match.matchId}</td>
         <td>{match.matchDate.substring(0,10)}</td>
         <td>{match.numberOfAttendees}</td>
+        <td>{match.homeClubName}</td>
         <td>{match.homeScore + "-" + match.awayScore}</td>
-        <td>{teamId === match.homeClubId ? match.homeClubId : match.visitingClubId}</td>
+        <td>{match.visitingClubName}</td>
     </tr>
   )
 }

@@ -19,7 +19,7 @@ const ViewClubSchedule = ({id}) => {
       <table>
           <tbody>
               <tr>
-                <th>ID</th><th>Date</th><th>Attendence</th><th>Score</th><th>Opponent</th>
+                <th>ID</th><th>Date</th><th>Attendence</th><th>Home Club</th><th>Score</th><th>Visiting Club</th>
               </tr>
               {matches.map( (m) => <ShowScheduleElement match = {m} teamId = {id}/>)}
           </tbody>

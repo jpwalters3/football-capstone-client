@@ -29,7 +29,7 @@ function ViewAllPlayers(){
             <table className = "roster-display">
                 <tbody>
                     <tr>
-                        <th>Id</th><th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th>
+                        <th>Id</th><th colSpan="2">Player</th><th colSpan="3">DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th><th>Club Id</th><th>Position Id</th>
                     </tr>
                     {players.map(p => <AdminPlayerDisplay player = {p}/>)}
                 </tbody>
