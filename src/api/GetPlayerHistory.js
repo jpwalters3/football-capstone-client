@@ -69,7 +69,7 @@ export async function EditHistory(history, token){
         })
 }
 
-export async function DeleteHistory(id, token){
+export async function DeleteHistory(matchId, playerId, token){
     const init = {
         method: "DELETE",
         headers: {
@@ -79,7 +79,7 @@ export async function DeleteHistory(id, token){
         }
     }
 
-    fetch("http://localhost:5101/api/history/" + id, init)
+    fetch("http://localhost:5101/api/history/" + matchId + "/" + playerId, init)
     .then(response => {
         if(response.status == 401){
             alert(`Error ${response.status}: ${response.statusText}\nDelete unsuccessful. Must be logged in as Admin to perform this task.`);
@@ -88,9 +88,6 @@ export async function DeleteHistory(id, token){
         else if(response.status !== 200){
             alert("error: " + response.status);
         }
-        else alert("entry " + id + " deleted")
+        else alert("entry deleted")
     })
 }
-
-
-

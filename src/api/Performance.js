@@ -12,6 +12,20 @@ export async function GetPlayerPerformance(id, set){
         })
 }
 
+export async function GetPerformance(matchId, playerId, set){
+    fetch("http://localhost:5101/api/performance/" + matchId + "/" + playerId)
+    .then(response=>{
+        if(response.status !== 200){
+            alert("error: " + response.status)
+            return Promise.reject(response.status);
+        }
+        return response.json();
+    })
+    .then(json=>{
+        set(json);
+    })
+}
+
 export async function PostPerformance(performance, token){
     const init = {
         method: "POST",
