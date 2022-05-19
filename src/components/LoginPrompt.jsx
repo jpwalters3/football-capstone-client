@@ -3,7 +3,6 @@ import {GetToken} from '../api/GetToken';
 import { Link } from 'react-router-dom'
 import { AdminContext } from '../App';
 import { TokenContext } from '../App';
-import Button from './Button';
 import '../styles/Form.css'
 
 const LoginPrompt = () => {
@@ -11,6 +10,7 @@ const LoginPrompt = () => {
     const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
 
     const [loginCredentials, setLoginCredentials] = useState({
+        //For demo purposes these are set to admin credentials
         userName: "admin",
         password: "adminPassword!"
     });
@@ -19,6 +19,7 @@ const LoginPrompt = () => {
         newCredentials[field] = value;
         setLoginCredentials(newCredentials);
     }
+
     return(
         <div>
             <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id ="update-club">

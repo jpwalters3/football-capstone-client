@@ -1,8 +1,3 @@
-//to be in app.js
-import React from "react";
-import {useState, useEffect} from "react";
-
-
 export async function GetToken(loginCredentials, setToken, setIsAdmin){
     const init = {
         method: "POST",
@@ -16,8 +11,8 @@ export async function GetToken(loginCredentials, setToken, setIsAdmin){
     fetch("http://localhost:5101/api/auth/login", init)
         .then(response => {
             if(response.status !== 200){
-                alert(`Error ${response.status}: ${response.statusText}\nViewing in Guest Mode`);
-                setToken("errorToken");
+                alert(`Error ${response.status}: ${response.statusText}\nIncorrect Admin credentials. Entering as guest.`);
+                setToken("");
                 setIsAdmin(false);
                 return Promise.reject("error");
             }
