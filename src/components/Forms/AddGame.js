@@ -21,7 +21,7 @@ const AddGame = () => {
       awayScore: document.getElementById('away-score').value,
       homeClubId: document.getElementById('home-team').value,
       visitingClubId: document.getElementById('away-team').value,
-      seasonId: 4
+      seasonId: 1
     }
     PostGame(game,token);
   }

@@ -11,3 +11,83 @@ export async function GetPlayerHistory(id, set){
             set(json);
         })
 }
+
+export async function PostHistory(history, token){
+    const init = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
+        },
+        body: JSON.stringify(history)
+    }
+    
+    fetch("http://localhost:5101/api/history", init)
+        .then(response => {
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nHistory not made. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 201){
+                alert ("Error " + response.status);
+                return Promise.reject(response.status);
+            }
+            return response.json();
+        })
+        .then(json=>{
+            alert ("Successfully added new entry " + json.historyId);
+        })
+
+}
+
+export async function EditHistory(history, token){
+    const init = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
+        },
+        body: JSON.stringify(history)
+    };
+
+    fetch("http://localhost:5101/api/history", init)
+        .then(response=>{
+            if(response.status == 401){
+                alert(`Error ${response.status}: ${response.statusText}\nEdit unsuccessful. Must be logged in as Admin to perform this task.`);
+                return Promise.reject(response.status);
+            }
+            else if(response.status !== 200){
+                alert("error: " + response.status);
+                return Promise.reject(response.status);
+            }
+            return response.json();
+        })
+        .then(json=>{
+            alert(json.historyId + " updated");
+        })
+}
+
+export async function DeleteHistory(matchId, playerId, token){
+    const init = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization" : `Bearer ${token}`
+        }
+    }
+
+    fetch("http://localhost:5101/api/history/" + matchId + "/" + playerId, init)
+    .then(response => {
+        if(response.status == 401){
+            alert(`Error ${response.status}: ${response.statusText}\nDelete unsuccessful. Must be logged in as Admin to perform this task.`);
+            return Promise.reject(response.status);
+        }
+        else if(response.status !== 200){
+            alert("error: " + response.status);
+        }
+        else alert("entry deleted")
+    })
+}

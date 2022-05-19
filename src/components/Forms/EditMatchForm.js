@@ -25,7 +25,7 @@ const EditMatchForm = ({match}) => {
     const [awayTeam, setAwayTeam] = useState(match.visitingClubId);
     const [matchDate, setMatchDate] = useState(match.matchDate);
     const [attendence, setAttendence] = useState(match.numberOfAttendees);
-    const [season, setSeason] = useState(match.seasonId);
+    const [season, setSeason] = useState(1);
     const [homeScore, setHomeScore] = useState(match.homeScore);
     const [awayScore, setAwayScore] = useState(match.awayScore);
 
@@ -34,7 +34,7 @@ const EditMatchForm = ({match}) => {
         setAwayTeam(match.visitingClubId);
         setMatchDate(match.matchDate);
         setAttendence(match.numberOfAttendees);
-        setSeason(match.seasonId);
+        setSeason(1);
         setHomeScore(match.homeScore);
         setAwayScore(match.awayScore);
     }, [match])

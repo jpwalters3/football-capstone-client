@@ -41,7 +41,6 @@ const EditPlayerForm = ({player}) => {
   return (
 
     <div>
-        <h3>Edit {player.firstName + " " + player.lastName}</h3>
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm" id = 'update-player'>
           <form onSubmit = {submitHandler}>
             <div class="form-group mb-6">

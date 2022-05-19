@@ -4,6 +4,7 @@ import EditPlayerForm from '../../components/Forms/EditPlayerForm'
 import { GetPlayerData } from '../../api/Player'
 import { AdminContext } from '../../App';
 import Unauthorized from '../Unauthorized';
+import PlayerPerformancesTable from '../../components/AdminDisplays/PlayerPerformancesTable'
 
 const EditPlayer = () => {
   const [isAdmin, setIsAdmin] = React.useContext(AdminContext);
@@ -30,7 +31,10 @@ const EditPlayer = () => {
       {isAdmin ? 
         <div>
           <Header />
-          <EditPlayerForm player = {player}/>
+          <br/><h1>Edit {player.firstName + ' ' + player.lastName}</h1><br/>
+          <EditPlayerForm player = {player}/> <br/><br/>
+          <PlayerPerformancesTable player ={player}/>
+          <br/><br/><br/><br/><br/><br/>
         </div>
       :
         <Unauthorized/>}

@@ -12,3 +12,16 @@ body {
   background-color: rgb(183, 157, 185);
   width: 350px;
 }
+
+.admin-performance-table{
+  background-color: rgb(187, 157, 189);
+}
+
+
+.admin-stats-table{
+  background-color: rgb(224, 188, 226);
+}
+
+.edit-performance-input{
+  width: 35px;
+}
