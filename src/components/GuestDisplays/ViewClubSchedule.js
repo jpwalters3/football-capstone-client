@@ -16,7 +16,7 @@ const ViewClubSchedule = ({id}) => {
 
   return (
     <div>
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ml-20">
           <tbody>
               <tr>
                 <th>Date</th><th>Attendence</th><th>Home Club</th><th>Score</th><th>Visiting Club</th>

@@ -16,7 +16,7 @@ const ClubRoster = ({id}) => {
     }, [id]);
   return (
     <div>
-      <table className = "club-roster" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <table className = "club-roster" class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ml-20">
           <tbody>
           <tr>
           <th colSpan="2">Player</th><th>DOB</th><th colSpan="2">Club</th><th>Position</th><th>Status</th><th>Stats</th><th>History</th>
